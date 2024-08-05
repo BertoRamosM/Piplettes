@@ -3,7 +3,7 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div className="w-full flex justify-between items-center h-16 px-6 bg-red-700 sticky top-0">
+    <div className="w-full flex justify-between items-center h-16 px-12 bg-red-700 sticky top-0 text-white">
       <div>
         <Link href="/" className="max-w-auto">
           Les Piplettes
