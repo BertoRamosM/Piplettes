@@ -1,14 +1,24 @@
 import ArrowLeft from "@/components/icons/ArrowLeft";
 import ArrowRight from "@/components/icons/ArrowRight";
+import CalendarIcon from "@/components/icons/CalendarIcon";
+import TicketIcon from "@/components/icons/TicketIcon";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="text-black py-20 px-8 bg-magenta-700 flex items-center flex-col">
-      <h1 className="text-xl font-bold pb-6">Nos prochains événements</h1>
-      <div className="w-full flex items-center justify-around">
-        <ArrowLeft />
-        <div className="relative w-full max-w-screen-lg h-96">
+    <div className="text-black py-20 bg-orangy-600 flex flex-col">
+      <div className="flex gap-4 h-auto items-center pb-8 px-12">
+        <TicketIcon />
+        <h1 className="text-xl font-black text-black text-left">
+          Nos prochains événements
+        </h1>
+      </div>
+      <div className="w-full flex items-center justify-between">
+        <div className="absolute z-50 left-12">
+          <ArrowLeft />
+        </div>
+        <div className="relative w-full w-screen-lg h-screen">
           <Image
             src="https://photos.infolocale.fr/infolocale/contribution/2024/0310/58889/_1_cover_1230-500_.jpg?rnd=20240311164751"
             alt="main page image"
@@ -16,19 +26,28 @@ export default function Home() {
             objectFit="cover"
             className=""
           />
-          <div className="absolute left-0 bottom-0 w-full h-1/2 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center">
-            <div className="text-center p-4">
-              <h2 className="text-white text-2xl font-bold">
-                L`Info en Bobines
-              </h2>
-              <p className="text-white">
-                Festival de ciné rencontres qui explore la liberté de la presse
-                et notre droit de savoir.
+          <div className="absolute left-0 bottom-0 w-full h-1/3 bg-black bg-opacity-50 backdrop-blur-sm flex items-center text-white">
+            <div className="text-pretty px-12">
+              <h2 className=" text-2xl font-bold pb-2">L`Info en Bobines</h2>
+              <p className="">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Molestiae odit ea eveniet, eligendi saepe aliquid rem voluptates
+                animi. Magni, necessitatibus?
               </p>
+              <div className="flex gap-2 items-center py-2 max-w-max justify-center">
+                <CalendarIcon />
+                <p>26 Février</p>
+              </div>
+
+              <Link href="#" alt="link event" className="text-orange-300">
+                Aller plus loin
+              </Link>
             </div>
           </div>
         </div>
-        <ArrowRight />
+        <div className="absolute z-50 right-12">
+          <ArrowRight />
+        </div>
       </div>
     </div>
   );
