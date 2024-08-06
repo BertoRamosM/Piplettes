@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
         <link rel="icon" href="/texte.png" />
       </Head>
-      <body className={`${inter.className} bg-magenta-600`}>
+      <body className={`${inter.className} bg-zinc-300`}>
         <Navbar />
         {children}
         <NewsletterCTA />
