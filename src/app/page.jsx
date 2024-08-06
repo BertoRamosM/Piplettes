@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="text-black mt-12 pt-20 pb-4  flex flex-col w-full mx-auto lg:w-[920px] rounded-xl px-4">
+    <div className="text-black mt-12 pt-20 pb-20  flex flex-col w-full mx-auto lg:w-[920px] rounded-xl px-4">
       <div className="flex gap-4 h-auto items-center pb-8 px-12">
         <TicketIcon />
         <h1 className="text-2xl font-bold text-black text-left">
