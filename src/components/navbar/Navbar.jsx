@@ -12,7 +12,7 @@ const Navbar = () => {
             alt="les Piplettes de granville logo"
             width={110}
             height={110}
-            className="cover"
+            className="object-cover"
           />
         </Link>
       </div>
