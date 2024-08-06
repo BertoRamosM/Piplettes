@@ -6,14 +6,14 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="text-black mt-12 pt-20 pb-20 flex flex-col w-full mx-auto lg:w-[920px] rounded-xl px-4 h-screen">
+    <div className="text-black mt-12 pt-20 pb-12 flex flex-col w-full mx-auto lg:w-[920px] rounded-xl px-4 h-screen">
       <div className="flex gap-4 h-auto items-center pb-8">
         <MessageIcon />
         <h1 className="text-2xl font-bold text-black text-left">
           Contactez-nous
         </h1>
       </div>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center gap-8">
         <form action="#" className="space-y-8 flex-1">
           <div>
             <label
@@ -52,7 +52,7 @@ const Contact = () => {
             Envoyer le message
           </button>
         </form>
-        <div className="flex-1 flex items-center justify-center flex-col gap-4">
+        <div className="flex-2 flex items-end flex-col gap-8">
           <div className="flex gap-2 justify-start">
             <PhoneIcon />
             <h4>07 50 51 13 48</h4>
