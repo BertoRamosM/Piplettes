@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
 import Head from "next/head";
+import NewsletterCTA from "@/components/NewsletterCTA";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} bg-magenta-600`}>
         <Navbar />
         {children}
+        <NewsletterCTA />
         <Footer />
       </body>
     </html>
