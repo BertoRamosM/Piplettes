@@ -7,7 +7,7 @@ const ArrowLeft = () => {
       width="32"
       height="32"
       viewBox="0 0 24 24"
-      fill="lime"
+      fill="orange"
       class="icon icon-tabler icons-tabler-filled icon-tabler-circle-arrow-left"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />

@@ -18,6 +18,9 @@ const Navbar = () => {
       </div>
 
       <div className="flex justify-between items-center">
+        <Link href="/" className="hover:text-greeny-600 px-6">
+          Accueil
+        </Link>
         <Link href="/events" className="hover:text-greeny-600 px-6">
           Événements
         </Link>
