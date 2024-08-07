@@ -5,13 +5,13 @@ import React from 'react'
 const About = () => {
   return (
     <div className="text-black mt-12 pt-20 pb-12 flex flex-col w-full mx-auto lg:w-[920px] rounded-xl px-4 h-auto">
-      <div className="flex gap-4 h-auto items-center pb-8">
+      <div className="flex gap-4 h-auto items-center pb-2">
         <GroupIcon />
         <h1 className="text-2xl font-bold text-black text-left">
           À propos de nous
         </h1>
       </div>
-
+      <h2 className="pb-12 text-orangy-600">Découvrez notre histoire et notre mission</h2>
       <div className="flex items-center justify-center gap-2">
         <div className="flex-1 text-pretty">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,

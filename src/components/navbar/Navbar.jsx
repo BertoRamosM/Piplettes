@@ -22,7 +22,7 @@ const Navbar = () => {
           Accueil
         </Link>
         <Link href="/events" className="hover:text-greeny-600 px-6">
-          Événements
+          Archives
         </Link>
         <Link href="/about" className="hover:text-greeny-600 px-6">
           À propos de nous

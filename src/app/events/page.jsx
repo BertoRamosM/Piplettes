@@ -13,12 +13,13 @@ import ArchiveIcon from "@/components/icons/ArchiveIcon";
 const Events = () => {
   return (
     <div className="text-black mt-12 pt-20 pb-12 flex flex-col w-full mx-auto lg:w-[920px] rounded-xl px-4 h-auto">
-      <div className="flex gap-4 h-auto items-center pb-8">
+      <div className="flex gap-4 h-auto items-center pb-2">
         <ArchiveIcon />
-        <h1 className="text-2xl font-bold text-orangy-600 text-left">
+        <h1 className="text-2xl font-bold  text-left">
           Nos archives
         </h1>
       </div>
+      <h2 className="pb-12 text-magenta-600">Naviguez à travers nos événements précédents.</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 rounded-xl h-auto">
         {Movies.map((item) => (
           <EventCard key={item.imdbID} item={item} />

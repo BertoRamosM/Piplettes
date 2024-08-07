@@ -66,12 +66,13 @@ export default function Home() {
 
   return (
     <div className="text-black mt-12 pt-20 pb-20 flex flex-col w-full mx-auto lg:w-[920px] rounded-xl px-4 relative">
-      <div className="flex gap-4 h-auto items-center pb-16">
+      <div className="flex gap-4 h-auto items-center pb-2">
         <TicketIcon />
         <h1 className="text-2xl font-bold text-black text-left">
           Nos prochains événements
         </h1>
       </div>
+      <h2 className="pb-12 text-orangy-600">Découvrez ce qui arrive bientôt</h2>
       <div className="relative w-full flex items-center justify-between h-screen bg-black bg-opacity-90 backdrop-blur-xs">
         <div
           className="absolute z-30 left-4 cursor-pointer"

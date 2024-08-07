@@ -7,12 +7,13 @@ import React from "react";
 const Contact = () => {
   return (
     <div className="text-black mt-12 pt-20 pb-12 flex flex-col w-full mx-auto lg:w-[920px] rounded-xl px-4 h-screen">
-      <div className="flex gap-4 h-auto items-center pb-8">
+      <div className="flex gap-4 h-auto items-center pb-2">
         <MessageIcon />
         <h1 className="text-2xl font-bold text-black text-left">
           Contactez-nous
         </h1>
       </div>
+      <h2 className="pb-12 text-greeny-600">Joignez-nous facilement</h2>
       <div className="flex items-center justify-center gap-8">
         <form action="#" className="space-y-8 flex-1">
           <div>
@@ -25,7 +26,7 @@ const Contact = () => {
             <input
               type="text"
               id="email"
-              className="block p-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-2 border-orangy-600 shadow-sm focus:outline-greeny-600 focus:outline-double focus:ring-primary-500 focus:border-primary-500 dark:bg-transparent dark:placeholder-black dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+              className="block p-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-2 border-greeny-600 shadow-sm focus:outline-greeny-600 focus:outline-double focus:ring-primary-500 focus:border-primary-500 dark:bg-transparent dark:placeholder-black dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
               placeholder="Email"
               required
             />
@@ -40,7 +41,7 @@ const Contact = () => {
             <input
               type="text"
               id="subject"
-              className="block p-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-2 border-orangy-600 shadow-sm focus:outline-greeny-600 focus:outline-double focus:ring-primary-500 focus:border-primary-500 dark:bg-transparent dark:placeholder-black dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+              className="block p-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-2 border-greeny-600 shadow-sm focus:outline-greeny-600 focus:outline-double focus:ring-primary-500 focus:border-primary-500 dark:bg-transparent dark:placeholder-black dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
               placeholder="Dites-nous comment nous pouvons vous aider"
               required
             />
@@ -55,14 +56,14 @@ const Contact = () => {
             <textarea
               id="message"
               rows="6"
-              className="block p-2.5 w-full text-sm text-gray-900 bg-transparent focus:outline-greeny-600 focus:outline-double rounded-lg shadow-sm border-2 border-orangy-600 focus:ring-greeny-600 focus:border-primary-500 dark:transparent dark:placeholder-black dark:text-black dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              className="block p-2.5 w-full text-sm text-gray-900 bg-transparent focus:outline-greeny-600 focus:outline-double rounded-lg shadow-sm border-2 border-greeny-600 focus:ring-greeny-600 focus:border-primary-500 dark:transparent dark:placeholder-black dark:text-black dark:focus:ring-primary-500 dark:focus:border-primary-500"
               placeholder="Laisser un message..."
             ></textarea>
           </div>
 
           <button
             type="submit"
-            className="bg-transparent border-2 border-greeny-600 text-greeny-600 w-max p-2 mt-2 hover:text-greeny-600  font-bold transition duration-300 hover:scale-105"
+            className="bg-transparent border-2 border-orangy-600 text-orangy-600 w-max p-2 mt-2 hover:text-greeny-600  font-bold transition duration-300 hover:scale-105"
           >
             Envoyer le message
           </button>
