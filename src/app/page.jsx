@@ -1,13 +1,13 @@
 'use client';
 import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import Button from "@/components/Button";
 import ArrowLeft from "@/components/icons/ArrowLeft";
 import ArrowRight from "@/components/icons/ArrowRight";
 import CalendarIcon from "@/components/icons/CalendarIcon";
 import TicketIcon from "@/components/icons/TicketIcon";
 import Hero from "@/components/Hero/Hero";
+import { Link } from "next-view-transitions";
 
 const movies = [
   {
