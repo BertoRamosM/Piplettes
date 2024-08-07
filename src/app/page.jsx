@@ -74,7 +74,7 @@ export default function Home() {
       </div>
       <div className="relative w-full flex items-center justify-between h-screen bg-black bg-opacity-90 backdrop-blur-xs">
         <div
-          className="absolute z-50 left-4 cursor-pointer"
+          className="absolute z-30 left-4 cursor-pointer"
           onClick={handlePrevClick}
         >
           <ArrowLeft />
@@ -100,15 +100,17 @@ export default function Home() {
               />
               <div className="absolute left-0 bottom-0 w-full h-1/3 bg-black bg-opacity-50 backdrop-blur-xs flex items-center text-white">
                 <div className="text-pretty px-12">
-                  <h2 className="text-2xl font-bold pb-2">
-                    {movie.title}
-                  </h2>
+                  <h2 className="text-2xl font-bold pb-2">{movie.title}</h2>
                   <p className="">{movie.desc}</p>
                   <div className="flex gap-2 items-center py-2 max-w-max justify-center">
                     <CalendarIcon />
                     <p>{movie.date}</p>
                   </div>
-                  <Link href="#" alt="link event" className="text-orange-300">
+                  <Link
+                    href="#"
+                    alt="link event"
+                    className="text-orangy-600 inline-block w-fit"
+                  >
                     <Button text={"Aller plus loin"} />
                   </Link>
                 </div>
@@ -117,7 +119,7 @@ export default function Home() {
           ))}
         </div>
         <div
-          className="absolute z-50 right-4 cursor-pointer"
+          className="absolute z-30 right-4 cursor-pointer"
           onClick={handleNextClick}
         >
           <ArrowRight />
