@@ -35,7 +35,7 @@ const NewsletterCTA = () => {
     <div>
       {isVisible || isAnimating ? (
         <div
-          className={`fixed bottom-4 right-4 w-auto bg-magenta-700 text-white p-4 shadow-xl rounded-lg transition-transform duration-500 ease-in-out transform ${
+          className={`fixed bottom-4 right-4 w-auto bg-magenta-600 text-white p-4 shadow-xl rounded-lg transition-transform duration-500 ease-in-out transform ${
             isVisible
               ? isAnimating
                 ? "animate-slide-out-right"
@@ -71,7 +71,7 @@ const NewsletterCTA = () => {
                     />
                     <button
                       type="submit"
-                      className="bg-transparent border-2 border-greeny-600 text-greeny-600 w-max p-2 hover:text-orangy-600 font-bold transition duration-300 hover:scale-105"
+                      className="bg-transparent border-2 border-greeny-600 text-white w-max p-2 hover:text-orangy-600 font-bold transition duration-300 hover:scale-105"
                     >
                       S`abonner
                     </button>
@@ -90,10 +90,11 @@ const NewsletterCTA = () => {
         </div>
       ) : (
         <div
-          className="fixed bottom-4 right-4 w-auto bg-magenta-700 text-white p-4 shadow-xl  rounded-lg flex items-center justify-center cursor-pointer transition-transform duration-500 ease-in-out transform animate-slide-in-right"
+          className="fixed bottom-4 right-4 w-auto bg-magenta-600 text-white p-4 shadow-xl  rounded-lg flex items-center justify-center cursor-pointer transition-transform duration-500 ease-in-out transform animate-slide-in-right"
           onClick={handleOpen}
         >
           <BellIcon />
+          <span class="animate-ping absolute top-1 right-0.5 block h-1 w-1 rounded-full ring-2 ring-greeny-600 bg-greeny-600"></span>
         </div>
       )}
     </div>

@@ -29,6 +29,16 @@ module.exports = {
           700: "#00c853",
         },
       },
+      keyframes: {
+        "bell-ring": {
+          "0%, 100%": { transform: "rotate(0deg)" },
+          "25%": { transform: "rotate(-10deg)" },
+          "75%": { transform: "rotate(10deg)" },
+        },
+      },
+      animation: {
+        "bell-ring": "bell-ring 1s ease-in-out infinite",
+      },
     },
   },
   plugins: [],
