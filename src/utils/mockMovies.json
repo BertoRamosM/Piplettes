@@ -88,5 +88,25 @@
     "image": "https://fr.web.img6.acsta.net/pictures/14/10/31/16/53/311216.jpg",
     "date": "26/02/2024",
     "time": "Lundi 20:00h"
+  },
+  {
+    "id": "9",
+    "title": "Citizenfour",
+    "director": "Laura Poitras",
+    "desc": "Après que Laura Poitras a reçu des e-mails cryptés de quelqu'un ayant des informations sur les vastes programmes de surveillance clandestins du gouvernement, elle et le journaliste Glenn Greenwald se sont envolés pour Hong Kong afin de rencontrer l'expéditeur, qui s'est avéré être Edward Snowden.",
+    "synopsis": "En 2013, Edward Snowden déclenche l’un des plus grands séismes politiques aux Etats-Unis en révélant des documents secret-défense de la NSA. Sous le nom le code « CITIZENFOUR », il contacte la documentariste américaine Laura Poitras. Elle part le rejoindre à Hong Kong et réalise en temps réel CITIZENFOUR, un document historique unique et un portrait intime d’Edward Snowden.",
+    "image": "https://www.hautetcourt.com/wp-content/uploads/2019/06/citizenfour-affiche-768x1024.jpg",
+    "date": "28/03/2024",
+    "time": "Jeudi 20:30h"
+  },
+  {
+    "id": "10",
+    "title": "Enquête sur un scandale d'état",
+    "director": "Thierry de Peretti",
+    "desc": "Stéphane Vilner, un jeune journaliste, qui est contacté par Hubert Antoine, un ancien infiltré des stups, après une saisie de sept tonnes de cannabis à Paris. Ensemble, ils dévoilent un scandale impliquant les autorités françaises.",
+    "synopsis": "Octobre 2015. Les douanes françaises saisissent sept tonnes de cannabis en plein cœur de la capitale. Le jour même, un ancien infiltré des stups, Hubert Antoine, contacte Stéphane Vilner, jeune journaliste à Libération. Il prétend pouvoir démontrer l’existence d’un trafic d’État dirigé par Jacques Billard, un haut gradé de la police française. D’abord méfiant, Stéphane finit par plonger dans une enquête qui le mènera jusqu'aux recoins les plus sombres de la République.",
+    "image": "https://fr.web.img4.acsta.net/pictures/22/01/20/16/13/2711733.jpg",
+    "date": "25/04/2024",
+    "time": "Jeudi 20:30h"
   }
 ]
