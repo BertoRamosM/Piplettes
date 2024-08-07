@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,8 +16,7 @@ const movies = [
     desc: "La Fille de Brest est un film français réalisé par Emmanuelle Bercot, sorti en France le 23 novembre 2016.",
     synopsis:
       "Dans son hôpital de Brest, une pneumologue découvre un lien direct entre des morts suspectes et la prise d'un médicament commercialisé depuis 30 ans, le Mediator. De l`isolement des débuts à l`explosion médiatique de l`affaire, l`histoire inspirée de la vie d`Irène Frachon est une bataille de David contre Goliath pour voir enfin triompher la vérité",
-    image:
-      "https://proxymedia.woopic.com/api/v1/images/331%2FLAFILLEDEBRW0119953_BAN1_2424_NEWTV_HD.jpg",
+    image: "https://fr.web.img3.acsta.net/pictures/16/09/20/11/58/588230.jpg",
     date: "Vendredi 23/06 20:00h",
   },
   {
@@ -44,17 +43,25 @@ const movies = [
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState("next");
 
   const handlePrevClick = () => {
+    setDirection("prev");
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? movies.length - 1 : prevIndex - 1
     );
   };
 
   const handleNextClick = () => {
+    setDirection("next");
     setCurrentIndex((prevIndex) =>
       prevIndex === movies.length - 1 ? 0 : prevIndex + 1
     );
+  };
+
+  const handleIndicatorClick = (index) => {
+    setDirection(index > currentIndex ? "next" : "prev");
+    setCurrentIndex(index);
   };
 
   return (
@@ -65,35 +72,49 @@ export default function Home() {
           Nos prochains événements
         </h1>
       </div>
-      <div className="relative w-full flex items-center justify-between h-screen">
+      <div className="relative w-full flex items-center justify-between h-screen bg-black bg-opacity-90 backdrop-blur-xs">
         <div
           className="absolute z-50 left-4 cursor-pointer"
           onClick={handlePrevClick}
         >
           <ArrowLeft />
         </div>
-        <div className="relative w-full h-screen">
-          <Image
-            src={movies[currentIndex].image}
-            alt="main page image"
-            layout="fill"
-            className="object-contain"
-          />
-          <div className="absolute left-0 bottom-0 w-full h-1/3 bg-black bg-opacity-50 backdrop-blur-xs flex items-center text-white">
-            <div className="text-pretty px-12">
-              <h2 className="text-2xl font-bold pb-2">
-                {movies[currentIndex].title}
-              </h2>
-              <p className="">{movies[currentIndex].desc}</p>
-              <div className="flex gap-2 items-center py-2 max-w-max justify-center">
-                <CalendarIcon />
-                <p>{movies[currentIndex].date}</p>
+        <div className="relative w-full h-full overflow-hidden">
+          {movies.map((movie, index) => (
+            <div
+              key={movie.id}
+              className={`absolute inset-0 transition-transform duration-700 ease-in-out transform ${
+                index === currentIndex
+                  ? "translate-x-0 opacity-100"
+                  : direction === "next"
+                  ? "translate-x-full opacity-0"
+                  : "translate-x-full opacity-0"
+              }`}
+              data-carousel-item
+            >
+              <Image
+                src={movie.image}
+                alt={movie.title}
+                layout="fill"
+                className="object-contain"
+              />
+              <div className="absolute left-0 bottom-0 w-full h-1/3 bg-black bg-opacity-50 backdrop-blur-xs flex items-center text-white">
+                <div className="text-pretty px-12">
+                  <h2 className="text-2xl font-bold pb-2">
+                    {movie.title}
+                  </h2>
+                  <p className="">{movie.desc}</p>
+                  <div className="flex gap-2 items-center py-2 max-w-max justify-center">
+                    <CalendarIcon />
+                    <p>{movie.date}</p>
+                  </div>
+                  <Link href="#" alt="link event" className="text-orange-300">
+                    <Button text={"Aller plus loin"} />
+                  </Link>
+                </div>
               </div>
-              <Link href="#" alt="link event" className="text-orange-300">
-                <Button text={"Aller plus loin"} />
-              </Link>
             </div>
-          </div>
+          ))}
         </div>
         <div
           className="absolute z-50 right-4 cursor-pointer"
@@ -101,6 +122,19 @@ export default function Home() {
         >
           <ArrowRight />
         </div>
+      </div>
+      <div className="absolute z-30 flex -translate-x-1/2 bottom-20 left-1/2 space-x-3 rtl:space-x-reverse pb-8">
+        {movies.map((_, index) => (
+          <button
+            key={index}
+            type="button"
+            className={`w-3 h-3 rounded-full ${
+              currentIndex === index ? "bg-orangy-600" : "bg-zinc-300"
+            }`}
+            aria-label={`Slide ${index + 1}`}
+            onClick={() => handleIndicatorClick(index)}
+          />
+        ))}
       </div>
     </div>
   );

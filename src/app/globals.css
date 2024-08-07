@@ -32,3 +32,27 @@
 .animate-slide-in-right {
   animation: slide-in-right 0.5s forwards;
 }
+
+
+/* CARROUSEL animations */
+.slide-enter {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.slide-enter-active {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.slide-exit {
+  transform: translateX(0%);
+  opacity: 1;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.slide-exit-active {
+  transform: translateX(-100%);
+  opacity: 0;
+}
