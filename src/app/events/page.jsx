@@ -15,7 +15,7 @@ const Events = () => {
     <div className="text-black mt-12 pt-20 pb-12 flex flex-col w-full mx-auto lg:w-[920px] rounded-xl px-4 h-auto">
       <div className="flex gap-4 h-auto items-center pb-8">
         <ArchiveIcon />
-        <h1 className="text-2xl font-bold text-black text-left">
+        <h1 className="text-2xl font-bold text-orangy-600 text-left">
           Nos archives
         </h1>
       </div>

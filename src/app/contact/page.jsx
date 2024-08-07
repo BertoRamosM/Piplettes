@@ -20,6 +20,21 @@ const Contact = () => {
               htmlFor="subject"
               className="block mb-2 text-sm font-bold text-black"
             >
+              Email
+            </label>
+            <input
+              type="text"
+              id="email"
+              className="block p-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-2 border-orangy-600 shadow-sm focus:outline-greeny-600 focus:outline-double focus:ring-primary-500 focus:border-primary-500 dark:bg-transparent dark:placeholder-black dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="subject"
+              className="block mb-2 text-sm font-bold text-black"
+            >
               Sujet
             </label>
             <input
