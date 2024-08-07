@@ -4,7 +4,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className="flex justify-between items-center py-8 px-12">
+    <div className="flex justify-between items-center py-12 px-12">
       <Link
         href="/"
         alt="logo"
@@ -19,6 +19,9 @@ const Footer = () => {
         <h1 className="font-bold">Les Piplettes de Granville</h1>
       </Link>
       <div className="flex flex-col font-bold gap-2">
+        <Link href="/" className="hover:text-greeny-600 px-6">
+          Accueil
+        </Link>
         <Link href="/events" className="hover:text-greeny-600 px-6">
           Événements
         </Link>
