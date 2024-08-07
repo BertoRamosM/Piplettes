@@ -7,6 +7,7 @@ import ArrowLeft from "@/components/icons/ArrowLeft";
 import ArrowRight from "@/components/icons/ArrowRight";
 import CalendarIcon from "@/components/icons/CalendarIcon";
 import TicketIcon from "@/components/icons/TicketIcon";
+import Hero from "@/components/Hero/Hero";
 
 const movies = [
   {
@@ -66,6 +67,7 @@ export default function Home() {
 
   return (
     <div className="text-black mt-12 pt-20 pb-20 flex flex-col w-full mx-auto lg:w-[920px] rounded-xl px-4 relative">
+      <Hero />
       <div className="flex gap-4 h-auto items-center pb-2">
         <TicketIcon />
         <h1 className="text-2xl font-bold text-black text-left">
