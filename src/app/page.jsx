@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import Button from "@/components/Button";
@@ -8,55 +8,37 @@ import CalendarIcon from "@/components/icons/CalendarIcon";
 import TicketIcon from "@/components/icons/TicketIcon";
 import Hero from "@/components/Hero/Hero";
 import { Link } from "next-view-transitions";
+import Movies from "../utils/mockMovies.json";
 
-const movies = [
-  {
-    id: "1",
-    title: "La Fille de Brest",
-    director: "Emmanuel Bercot",
-    desc: "La Fille de Brest est un film français réalisé par Emmanuelle Bercot, sorti en France le 23 novembre 2016.",
-    synopsis:
-      "Dans son hôpital de Brest, une pneumologue découvre un lien direct entre des morts suspectes et la prise d'un médicament commercialisé depuis 30 ans, le Mediator. De l`isolement des débuts à l`explosion médiatique de l`affaire, l`histoire inspirée de la vie d`Irène Frachon est une bataille de David contre Goliath pour voir enfin triompher la vérité",
-    image: "https://fr.web.img3.acsta.net/pictures/16/09/20/11/58/588230.jpg",
-    date: "Vendredi 23/06 20:00h",
-  },
-  {
-    id: "2",
-    title: "Media Crash",
-    director: "Valentine Oberti et Luc Hermann",
-    desc: "Qui a tué le débat public?",
-    synopsis:
-      "Il y a ce que vous voyez, ce que certains souhaitent que vous voyiez, et ce que vous ne voyez pas. Jamais la France n’a connu une telle concentration des médias privés. Quelques industriels milliardaires, propriétaires de télévisions, radios, journaux utilisent leurs médias pour défendre leurs intérêts privés. Au détriment de l'information d’intérêt public. En cachant ce qui est essentiel, en grossissant ce qui est accessoire, ces médias façonnent, orientent, hystérisent pour certains le débat. Avec la complicité de certains responsables politiques, qui s`en accommodent volontiers. Mediapart et Premières Lignes vous racontent les coulisses des grands médias.",
-    image: "https://fr.web.img4.acsta.net/pictures/22/02/01/16/26/1880267.jpg",
-    date: "Samedi 24/06 14:00h",
-  },
-  {
-    id: "3",
-    title: "Hacking Justice",
-    director: "Clara López Rubio, Juan Pancorbo",
-    desc: "In 2012, Julian Assange, editor of WikiLeaks, takes refuge in the Embassy of Ecuador in London.",
-    synopsis:
-      "Voici l’histoire glorieuse et bouleversante de Julian Assange et de sa traque menée par les États-Unis et leurs vassaux dans une nouvelle version de l’éternel combat de Spartacus contre l’Empire. Suivant pas à pas la défense du fondateur de WikiLeaks, coordonnée par l’avocat espagnol Baltasar Garzón, mondialement connu pour avoir fait interpeller l’ancien dictateur chilien Augusto Pinochet, les réalisateurs ont parcouru le monde pendant neuf ans pour retisser cette histoire aux implications politiques profondes. Dans une démocratie, la liberté d’informer est un minimum vital et ne peut être une option, quelles que soient nos opinions politiques. Cette histoire concerne chacun d’entre nous.",
-    image: "https://fr.web.img6.acsta.net/pictures/21/11/02/17/51/5403060.jpg",
-    date: "Dimanche 25/06 14:30h",
-  },
-];
+const sortAndSelectRecentMovies = (movies) => {
+  // Parse date and sort the array
+  const sortedMovies = movies.sort((a, b) => {
+    const dateA = new Date(a.date.split("/").reverse().join("-"));
+    const dateB = new Date(b.date.split("/").reverse().join("-"));
+    return dateB - dateA;
+  });
+
+  // Return the top 3 recent movies
+  return sortedMovies.slice(0, 3);
+};
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState("next");
 
+  const recentMovies = sortAndSelectRecentMovies(Movies);
+
   const handlePrevClick = () => {
     setDirection("prev");
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? movies.length - 1 : prevIndex - 1
+      prevIndex === 0 ? recentMovies.length - 1 : prevIndex - 1
     );
   };
 
   const handleNextClick = () => {
     setDirection("next");
     setCurrentIndex((prevIndex) =>
-      prevIndex === movies.length - 1 ? 0 : prevIndex + 1
+      prevIndex === recentMovies.length - 1 ? 0 : prevIndex + 1
     );
   };
 
@@ -83,7 +65,7 @@ export default function Home() {
           <ArrowLeft />
         </div>
         <div className="relative w-full h-full overflow-hidden">
-          {movies.map((movie, index) => (
+          {recentMovies.map((movie, index) => (
             <div
               key={movie.id}
               className={`absolute inset-0 transition-transform duration-700 ease-in-out transform ${
@@ -129,7 +111,7 @@ export default function Home() {
         </div>
       </div>
       <div className="absolute z-30 flex -translate-x-1/2 bottom-20 left-1/2 space-x-3 rtl:space-x-reverse pb-8">
-        {movies.map((_, index) => (
+        {recentMovies.map((_, index) => (
           <button
             key={index}
             type="button"

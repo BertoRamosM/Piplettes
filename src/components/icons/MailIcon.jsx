@@ -8,7 +8,7 @@ const MailIcon = () => {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#F39200"
+      stroke="#95C11F"
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
