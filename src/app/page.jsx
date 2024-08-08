@@ -50,7 +50,7 @@ export default function Home() {
   return (
     <div className="text-black mt-12 pt-20 pb-20 flex flex-col w-full mx-auto lg:w-[920px] rounded-xl px-4 relative">
       <Hero />
-      <div className="flex gap-4 h-auto items-center pb-2">
+      <div className="flex gap-4 h-auto items-center pb-2" id="events">
         <TicketIcon />
         <h1 className="text-2xl font-bold text-black text-left">
           Nos prochains événements
@@ -83,7 +83,7 @@ export default function Home() {
                 layout="fill"
                 className="object-contain"
               />
-              <div className="absolute left-0 bottom-0 w-full h-1/3 bg-black bg-opacity-50 backdrop-blur-xs flex items-center text-white">
+              <div className="absolute left-0 bottom-0 w-full h-auto py-4 bg-black bg-opacity-50 backdrop-blur-xs flex items-center text-white">
                 <div className="text-pretty px-12">
                   <h2 className="text-2xl font-bold pb-2">{movie.title}</h2>
                   <p className="">{movie.desc}</p>
