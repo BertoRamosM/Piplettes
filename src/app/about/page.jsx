@@ -12,7 +12,7 @@ const About = () => {
         </h1>
       </div>
       <h2 className="pb-12 text-orangy-600">Découvrez notre histoire et notre mission</h2>
-      <div className="flex items-center justify-center gap-2">
+      <div className="flex items-center justify-center gap-2 flex-col-reverse sm:flex-row">
         <div className="flex-1 text-pretty">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
           maxime non. A voluptatum ipsa praesentium nulla temporibus eveniet

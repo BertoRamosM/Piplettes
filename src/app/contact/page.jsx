@@ -6,7 +6,7 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="text-black mt-12 pt-20 pb-12 flex flex-col w-full mx-auto lg:w-[920px] rounded-xl px-4 h-screen">
+    <div className="text-black mt-12 pt-20 pb-12 flex flex-col w-full mx-auto lg:w-[920px] rounded-xl px-4">
       <div className="flex gap-4 h-auto items-center pb-2">
         <MessageIcon />
         <h1 className="text-2xl font-bold text-black text-left">
@@ -14,8 +14,8 @@ const Contact = () => {
         </h1>
       </div>
       <h2 className="pb-12 text-greeny-600">Joignez-nous facilement</h2>
-      <div className="flex items-center justify-center gap-8">
-        <form action="#" className="space-y-8 flex-1">
+      <div className="flex sm:items-center justify-center gap-8 flex-col sm:flex-row">
+        <form action="#" className="space-y-8 flex-1 pb-4 sm:pb-0">
           <div>
             <label
               htmlFor="subject"
@@ -68,7 +68,7 @@ const Contact = () => {
             Envoyer le message
           </button>
         </form>
-        <div className="flex-2 flex items-end flex-col gap-8">
+        <div className="flex-2 flex items-end flex-col gap-8 self-center">
           <div className="flex gap-2 justify-start">
             <PhoneIcon />
             <h4>07 50 51 13 48</h4>
