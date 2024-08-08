@@ -29,7 +29,7 @@ const Footer = () => {
           À propos de nous
         </Link>
         <Link href="/contact" className="hover:text-greeny-600 px-6">
-          Contact nous
+          Contactez-nous
         </Link>
       </div>
     </div>

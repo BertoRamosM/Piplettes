@@ -28,10 +28,10 @@ const EventPage = ({params}) => {
             ))}
           </div>
         </div>
-        <Image src={movie.image} alt={movie.title} width={300} height={200} />
+        <Image src={movie.image} alt={movie.title} width={200} height={200} />
       </div>
       <h4 className="text-2xl text-bold underline pb-2">Synopsis</h4>
-      <p className="text-pretty">{movie.synopsis}</p>
+      <p className="text-pretty pb-12">{movie.synopsis}</p>
     </div>
   );
 }

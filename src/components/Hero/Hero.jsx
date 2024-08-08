@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "../Button";
 import Image from "next/image";
+import { Link } from "next-view-transitions";
 
 const Hero = () => {
   return (
@@ -34,10 +34,11 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-wrap justify-center text-black">
-              <div className="bg-transparent border-2 border-magenta-600 text-magenta-600 w-max p-2 mt-2 hover:text-greeny-600 transition duration-300 hover:scale-105 cursor-pointer flex items-center justify-center font-bold h-max">
-                Nos prochains événements
-              </div>
-             
+              <Link href="#events">
+                <div className="bg-transparent border-2 border-magenta-600 text-magenta-600 w-max p-2 mt-2 hover:text-greeny-600 transition duration-300 hover:scale-105 cursor-pointer flex items-center justify-center font-bold h-max">
+                  Nos prochains événements
+                </div>
+              </Link>
             </div>
           </div>
         </div>

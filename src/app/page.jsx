@@ -47,6 +47,12 @@ export default function Home() {
     setCurrentIndex(index);
   };
 
+  const handleClick = (e) => {
+    e.preventDefault(); 
+    window.scrollTo(0, 0); 
+  
+  };
+
   return (
     <div className="">
       <Hero />
@@ -95,6 +101,7 @@ export default function Home() {
                     href={`/events/${movie.id}`}
                     alt="link event"
                     className="text-orangy-600 inline-block w-fit"
+                    onClick={handleClick}
                   >
                     <Button text={"Aller plus loin"} />
                   </Link>
