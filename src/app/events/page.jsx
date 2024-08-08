@@ -6,6 +6,14 @@ import ArchiveIcon from "@/components/icons/ArchiveIcon";
 import SearchIcon from "@/components/icons/SearchIcon";
 import FilterIcon from "@/components/icons/FilterIcon";
 
+const sortMoviesByDate = (movies) => {
+  return movies.sort((a, b) => {
+    const dateA = new Date(a.date.split("/").reverse().join("-"));
+    const dateB = new Date(b.date.split("/").reverse().join("-"));
+    return dateB - dateA;
+  });
+};
+
 const Events = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTheme, setSelectedTheme] = useState("");
@@ -18,7 +26,10 @@ const Events = () => {
     setSelectedTheme(event.target.value);
   };
 
-  const filteredMovies = Movies.filter((movie) => {
+  //sort movies by date before applying filters
+  const sortedMovies = sortMoviesByDate(Movies);
+
+  const filteredMovies = sortedMovies.filter((movie) => {
     const matchesSearchTerm = movie.title
       .toLowerCase()
       .includes(searchTerm.toLowerCase());
