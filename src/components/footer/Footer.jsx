@@ -20,7 +20,7 @@ const Footer = () => {
       </Link>
       <div className="flex flex-col font-bold gap-2">
         <Link href="/" className="hover:text-greeny-600 px-6">
-          Accueil
+          Nos prochains événements
         </Link>
         <Link href="/events" className="hover:text-greeny-600 px-6">
           Événements

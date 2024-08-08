@@ -22,7 +22,9 @@ const Events = () => {
     const matchesSearchTerm = movie.title
       .toLowerCase()
       .includes(searchTerm.toLowerCase());
-    const matchesTheme = selectedTheme ? movie.theme === selectedTheme : true;
+    const matchesTheme = selectedTheme
+      ? movie.themes.includes(selectedTheme)
+      : true;
     return matchesSearchTerm && matchesTheme;
   });
 
@@ -72,13 +74,19 @@ const Events = () => {
               className="bg-transparent border-2 border-zinc-500 w-full pl-10 pr-3 py-2 rounded-md outline-none"
             >
               <option value="">Tous les thèmes</option>
-              <option value="documentary">Documentaire</option>
-              <option value="film">Film</option>
-              <option value="politics">Politique</option>
-              <option value="religion">Religion</option>
+              <option value="Documentaire">Documentaire</option>
+              <option value="Film">Film</option>
+              <option value="Politique">Politique</option>
+              <option value="Religion">Religion</option>
             </select>
           </div>
         </div>
+      </div>
+
+      <div className="pb-4">
+        {searchTerm === "" && selectedTheme === ""
+          ? "Tous les films"
+          : `Recherche: ${searchTerm}, Thème: ${selectedTheme}`}
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 rounded-xl h-auto">
