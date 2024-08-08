@@ -21,22 +21,25 @@ const Hero = () => {
             sur le cinéma. Engagez-vous dans nos Ciné Débats pour des
             discussions enrichissantes et stimulantes après chaque projection.
           </p>
-          <div className="relative w-48 h-48 mb-8">
-            <Image
-              src="/illustration.png"
-              alt="Les Piplettes logo"
-              layout="responsive"
-              width={192}
-              height={192}
-              className="object-contain"
-            />
+          <div className="flex items-center justify-between w-full">
+            <div className="relative w-48 h-48 mb-8">
+              <Image
+                src="/illustration.png"
+                alt="Les Piplettes logo"
+                layout="responsive"
+                width={192}
+                height={192}
+                className="object-contain"
+              />
+            </div>
+
+            <div className="flex flex-wrap justify-center text-black">
+              <div className="bg-transparent border-2 border-magenta-600 text-magenta-600 w-max p-2 mt-2 hover:text-greeny-600 transition duration-300 hover:scale-105 cursor-pointer flex items-center justify-center font-bold h-max">
+                Nos prochains événements
+              </div>
+             
+            </div>
           </div>
-        </div>
-        <div className="flex flex-wrap justify-center">
-          <Button text={"Nos prochains événements"}></Button>
-          <button className="px-8 py-3 m-2 text-lg border rounded dark:text-gray-900 dark:border-gray-300 cursor-pointer">
-            À propos de nous
-          </button>
         </div>
       </div>
     </section>
