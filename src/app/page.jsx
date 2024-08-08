@@ -92,7 +92,7 @@ export default function Home() {
                     <p>{movie.date}</p>
                   </div>
                   <Link
-                    href="#"
+                    href={`/events/${movie.id}`}
                     alt="link event"
                     className="text-orangy-600 inline-block w-fit"
                   >
