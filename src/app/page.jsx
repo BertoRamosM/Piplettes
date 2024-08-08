@@ -48,7 +48,7 @@ export default function Home() {
   };
 
   return (
-    <div className="text-black mt-12 pt-20 pb-20 flex flex-col w-full mx-auto lg:w-[920px] rounded-xl px-4 relative">
+    <div className="">
       <Hero />
       <div className="flex gap-4 h-auto items-center pb-2" id="events">
         <TicketIcon />
@@ -109,19 +109,19 @@ export default function Home() {
         >
           <ArrowRight />
         </div>
-      </div>
-      <div className="absolute z-30 flex -translate-x-1/2 bottom-20 left-1/2 space-x-3 rtl:space-x-reverse pb-8">
-        {recentMovies.map((_, index) => (
-          <button
-            key={index}
-            type="button"
-            className={`w-3 h-3 rounded-full ${
-              currentIndex === index ? "bg-orangy-600" : "bg-zinc-300"
-            }`}
-            aria-label={`Slide ${index + 1}`}
-            onClick={() => handleIndicatorClick(index)}
-          />
-        ))}
+        <div className="absolute z-30 flex -translate-x-1/2 left-1/2 space-x-3 rtl:space-x-reverse pb-8 bottom-5">
+          {recentMovies.map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              className={`w-3 h-3 rounded-full ${
+                currentIndex === index ? "bg-orangy-600" : "bg-zinc-300"
+              }`}
+              aria-label={`Slide ${index + 1}`}
+              onClick={() => handleIndicatorClick(index)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
