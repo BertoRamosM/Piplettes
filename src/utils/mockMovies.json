@@ -8,7 +8,8 @@
     "image": "https://fr.web.img3.acsta.net/pictures/16/09/20/11/58/588230.jpg",
     "date": "23/06/2023",
     "time": "Vendredi 20:30h",
-    "themes": ["Film", "Religion", "Politique"]
+    "themes": ["Film", "Religion", "Politique"],
+    "release" : "2020"
   },
   {
     "id": "2",
@@ -19,7 +20,8 @@
     "image": "https://fr.web.img4.acsta.net/pictures/22/02/01/16/26/1880267.jpg",
     "date": "24/06/2023",
     "time": "Samedi 14:00h",
-    "themes": ["Documentaire", "Politique"]
+    "themes": ["Documentaire", "Politique"],
+    "release": "2022"
   },
   {
     "id": "3",
@@ -30,7 +32,8 @@
     "image": "https://fr.web.img6.acsta.net/pictures/21/11/02/17/51/5403060.jpg",
     "date": "25/06/2023",
     "time": "Dimanche 14:30h",
-    "themes": ["Film", "Politique"]
+    "themes": ["Film", "Politique"],
+    "release": "2017"
   },
   {
     "id": "4",
@@ -41,7 +44,8 @@
     "image": "https://fr.web.img4.acsta.net/pictures/22/06/17/16/50/4551513.jpg",
     "date": "06/12/2023",
     "time": "Mardi 20:30h",
-    "themes": ["Documentaire", "Politique"]
+    "themes": ["Documentaire", "Politique"],
+    "release": "2022"
   },
   {
     "id": "5",
@@ -52,7 +56,8 @@
     "image": "https://fr.web.img5.acsta.net/medias/nmedia/18/81/96/10/19587371.jpg",
     "date": "21/03/2023",
     "time": "Mardi 20:30h",
-    "themes": ["Film", "Religion", "Politique"]
+    "themes": ["Film", "Religion", "Politique"],
+    "release": "2010"
   },
   {
     "id": "6",
@@ -63,7 +68,8 @@
     "image": "https://fr.web.img6.acsta.net/pictures/22/07/22/15/57/0063257.jpg",
     "date": "21/03/2023",
     "time": "Mardi 20:30h",
-    "themes": ["Film", "Politique"]
+    "themes": ["Film", "Politique"],
+    "release": "2022"
   },
   {
     "id": "7",
@@ -74,7 +80,8 @@
     "image": "https://fr.web.img6.acsta.net/medias/nmedia/18/84/43/34/19783842.jpg",
     "date": "12/14/2023",
     "time": "Jeudi 20:30h",
-    "themes": ["Documentaire", "Religion", "Politique"]
+    "themes": ["Documentaire", "Religion", "Politique"],
+    "release": "2011"
   },
   {
     "id": "7",
@@ -85,7 +92,7 @@
     "image": "https://fr.web.img2.acsta.net/pictures/23/11/22/11/28/1700861.jpg",
     "date": "25/02/2024",
     "time": "Jeudi 20:00h",
-    "themes": ["Documentaire", "Politique"]
+    "themes": ["Documentaire", "Politique"],"release": "2021"
   },
   {
     "id": "8",
@@ -107,7 +114,8 @@
     "image": "https://www.hautetcourt.com/wp-content/uploads/2019/06/citizenfour-affiche-768x1024.jpg",
     "date": "28/03/2024",
     "time": "Jeudi 20:30h",
-    "themes": ["Documentaire", "Politique"]
+    "themes": ["Documentaire", "Politique"],
+    "release": "2014"
   },
   {
     "id": "10",
@@ -118,6 +126,7 @@
     "image": "https://fr.web.img4.acsta.net/pictures/22/01/20/16/13/2711733.jpg",
     "date": "25/04/2024",
     "time": "Jeudi 20:30h",
-    "themes": ["Film", "Religion", "Politique"]
+    "themes": ["Film", "Religion", "Politique"],
+    "release": "2015"
   }
 ]
