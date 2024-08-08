@@ -82,7 +82,7 @@ const Events = () => {
               id="filter"
               value={selectedTheme}
               onChange={handleThemeChange}
-              className="bg-transparent border-2 border-zinc-500 w-full pl-10 pr-3 py-2 rounded-md outline-none"
+              className="bg-transparent border-2 border-zinc-500 w-full pl-10 pr-3 py-2  outline-none bg-tansparent   text-gray-900 text-sm rounded-lg focus:ring-zinc-500 focus:border-zinc-500 block p-2.5 dark:bg-zinc-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-zinc-500 dark:focus:border-zinc-500"
             >
               <option value="">Tous les thèmes</option>
               <option value="Documentaire">Documentaire</option>
