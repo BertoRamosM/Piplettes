@@ -42,8 +42,9 @@ const Events = () => {
   });
 
   return (
+    
     <div className="">
-      <Scroll />
+       <Scroll />
       <div className="flex gap-4 h-auto items-center pb-2">
         <ArchiveIcon />
         <h1 className="text-2xl font-bold text-left">Nos archives</h1>

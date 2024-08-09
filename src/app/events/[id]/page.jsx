@@ -47,25 +47,31 @@ const EventPage = ({ params }) => {
             ))}
           </div>
         </div>
-        <Image src={movie.image} alt={movie.title} width={200} height={200} priority />
+        <Image
+          src={movie.image}
+          alt={movie.title}
+          width={200}
+          height={200}
+          priority
+        />
       </div>
       <h4 className="text-2xl text-bold underline pb-2">Synopsis</h4>
       <p className="text-pretty pb-12">{movie.synopsis}</p>
       <div className="py-8 flex items-center justify-between">
-        {prevMovie && currentMovieIndex < sortedMovies.length - 1 ? (
+        {nextMovie && currentMovieIndex > 0 ? (
           <Link
-            href={`/events/${prevMovie.id}`}
+            href={`/events/${nextMovie.id}`}
             className="flex items-center justify-center hover:text-magenta-600"
           >
             <ChevronLeft />
-            Précédent
+            Precedent
           </Link>
         ) : (
           <div />
         )}
-        {nextMovie && currentMovieIndex > 0 ? (
+        {prevMovie && currentMovieIndex < sortedMovies.length - 1 ? (
           <Link
-            href={`/events/${nextMovie.id}`}
+            href={`/events/${prevMovie.id}`}
             className="flex items-center justify-center hover:text-magenta-600"
           >
             Suivant
