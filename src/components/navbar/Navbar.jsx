@@ -58,7 +58,7 @@ const isActive = (href) => {
       </div>
 
       {isOpen && (
-        <div className="flex lg:hidden bg-black bg-opacity-80 h-screen w-screen fixed inset-0 z-40 flex-col items-center justify-center text-2xl gap-16">
+        <div className="flex lg:hidden bg-black bg-opacity-80 h-screen w-screen fixed inset-0 z-40 flex-col items-center justify-center sm:text-2xl gap-16 text-xl">
           <Link
             href="/#events"
             onClick={handleClick}
