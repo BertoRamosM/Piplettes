@@ -24,7 +24,6 @@ export default function RootLayout({ children }) {
           <meta name="description" content={metadata.description} />
           <link rel="icon" href="/texte.png" />
         </Head>
-        <Scroll />
         <body className={`${inter.className} bg-zinc-300`}>
           <Navbar />
           <div className="text-black mt-12 pt-20 pb-12 flex flex-col w-full mx-auto lg:w-[920px] rounded-xl px-4 h-auto">

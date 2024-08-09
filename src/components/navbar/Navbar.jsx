@@ -2,6 +2,7 @@
 import { Link } from 'next-view-transitions';
 import Image from 'next/image';
 import React, { useState } from 'react'
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
 
@@ -9,7 +10,11 @@ const Navbar = () => {
 
    const handleClick = () => {
      setIsOpen(!isOpen);
-   };
+  };
+  
+  const router = useRouter();
+  const isActive = (href) => router.pathname === href
+
   return (
     <div className="w-full flex justify-between items-center py-2 px-12 bg-magenta-600 sticky top-0 text-white font-bold z-50">
       <div>
@@ -81,16 +86,44 @@ const Navbar = () => {
       )}
 
       <div className="justify-between items-center hidden lg:flex">
-        <Link href="/#events" className="hover:text-greeny-600 px-6">
+        <Link
+          href="/#events"
+          className={`px-6 hover:text-greeny-600 ${
+            isActive("/")
+              ? "text-greeny-600 font-bold underline bg-magenta-500"
+              : "text-white"
+          }`}
+        >
           Nos prochains événements
         </Link>
-        <Link href="/events" className="hover:text-greeny-600 px-6">
+        <Link
+          href="/events"
+          className={`px-6 hover:text-greeny-600 ${
+            isActive("/#events")
+              ? "text-greeny-600 font-bold underline bg-magenta-500"
+              : "text-white"
+          }`}
+        >
           Archives
         </Link>
-        <Link href="/about" className="hover:text-greeny-600 px-6">
+        <Link
+          href="/about"
+          className={`px-6 hover:text-greeny-600 ${
+            isActive("/")
+              ? "text-greeny-600 font-bold underline bg-magenta-500"
+              : "text-white"
+          }`}
+        >
           À propos de nous
         </Link>
-        <Link href="/contact" className="hover:text-greeny-600 px-6">
+        <Link
+          href="/contact"
+          className={`px-6 hover:text-greeny-600 ${
+            isActive("/")
+              ? "text-greeny-600 font-bold underline bg-magenta-500"
+              : "text-white"
+          }`}
+        >
           Contactez-nous
         </Link>
       </div>

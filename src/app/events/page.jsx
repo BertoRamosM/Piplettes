@@ -5,8 +5,10 @@ import EventCard from "./EventCard";
 import ArchiveIcon from "@/components/icons/ArchiveIcon";
 import SearchIcon from "@/components/icons/SearchIcon";
 import FilterIcon from "@/components/icons/FilterIcon";
+import Scroll from "@/utils/scrollUp/Scroll";
 
 const sortMoviesByDate = (movies) => {
+ 
   return movies.sort((a, b) => {
     const dateA = new Date(a.date.split("/").reverse().join("-"));
     const dateB = new Date(b.date.split("/").reverse().join("-"));
@@ -41,6 +43,7 @@ const Events = () => {
 
   return (
     <div className="">
+      <Scroll />
       <div className="flex gap-4 h-auto items-center pb-2">
         <ArchiveIcon />
         <h1 className="text-2xl font-bold text-left">Nos archives</h1>
