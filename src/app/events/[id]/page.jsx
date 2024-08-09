@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Link } from "next-view-transitions";
 import ChevronLeft from "@/components/icons/ChevronLeft";
 import ChevronRight from "@/components/icons/ChevronRight";
+import BackArrow from "@/components/icons/BackArrow";
 
 const EventPage = ({ params }) => {
   // Sort the movies by date in descending order (newest to oldest)
@@ -29,6 +30,10 @@ const EventPage = ({ params }) => {
 
   return (
     <div className="">
+      <Link className="flex gap-2 items-center hover:text-magenta-600" href="/events">
+        <BackArrow />
+        Back to archives
+      </Link>
       <div className="flex flex-col sm:flex-row gap-4 items-center justify-between pb-8">
         <div className="flex flex-col gap-2">
           <h1 className="text-5xl">{movie.title}</h1>

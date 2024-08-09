@@ -18,7 +18,7 @@ const EventCard = ({ item }) => {
         className="relative bg-cover bg-center h-80 w-full px-4 py-8 flex flex-col justify-end"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <div className="absolute left-0 bottom-0 w-full h-2/5 bg-black bg-opacity-50 backdrop-blur-sm flex items-start text-white px-2 flex-col justify-between py-4">
+        <div className="absolute left-0 bottom-0 w-full h-2/5 bg-black bg-opacity-70 backdrop-blur-sm flex items-start text-white px-2 flex-col justify-between py-4">
           <h3>{shortTitle}</h3>
           <p className="text-xs">
             {item.date} {item.time}
