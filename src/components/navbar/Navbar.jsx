@@ -1,19 +1,24 @@
-'use client'
-import { Link } from 'next-view-transitions';
-import Image from 'next/image';
-import React, { useState } from 'react'
-import { useRouter } from 'next/navigation';
+"use client";
+import { Link } from "next-view-transitions";
+import Image from "next/image";
+import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
-   const [isOpen, setIsOpen] = useState(false);
-
-   const handleClick = () => {
-     setIsOpen(!isOpen);
+  const handleClick = () => {
+    setIsOpen(!isOpen);
   };
-  
-  const router = useRouter();
-  const isActive = (href) => router.pathname === href
+
+const isActive = (href) => {
+  if (href === "/") {
+    return pathname === href; // Only active when exactly on "/"
+  }
+  return pathname.startsWith(href) && pathname !== "/"; // Exclude home path from partial matches
+};
+
 
   return (
     <div className="w-full flex justify-between items-center py-2 px-12 bg-magenta-600 sticky top-0 text-white font-bold z-50">
@@ -90,7 +95,7 @@ const Navbar = () => {
           href="/#events"
           className={`px-6 hover:text-greeny-600 ${
             isActive("/")
-              ? "text-greeny-600 font-bold underline bg-magenta-500"
+              ? "text-greeny-600 font-bold underline"
               : "text-white"
           }`}
         >
@@ -99,8 +104,8 @@ const Navbar = () => {
         <Link
           href="/events"
           className={`px-6 hover:text-greeny-600 ${
-            isActive("/#events")
-              ? "text-greeny-600 font-bold underline bg-magenta-500"
+            isActive("/events")
+              ? "text-greeny-600 font-bold underline"
               : "text-white"
           }`}
         >
@@ -109,8 +114,8 @@ const Navbar = () => {
         <Link
           href="/about"
           className={`px-6 hover:text-greeny-600 ${
-            isActive("/")
-              ? "text-greeny-600 font-bold underline bg-magenta-500"
+            isActive("/about")
+              ? "text-greeny-600 font-bold underline"
               : "text-white"
           }`}
         >
@@ -119,8 +124,8 @@ const Navbar = () => {
         <Link
           href="/contact"
           className={`px-6 hover:text-greeny-600 ${
-            isActive("/")
-              ? "text-greeny-600 font-bold underline bg-magenta-500"
+            isActive("/contact")
+              ? "text-greeny-600 font-bold underline"
               : "text-white"
           }`}
         >
@@ -129,6 +134,7 @@ const Navbar = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Navbar
+export default Navbar;
+  
