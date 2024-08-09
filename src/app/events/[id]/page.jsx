@@ -29,7 +29,7 @@ const EventPage = ({ params }) => {
 
   return (
     <div className="">
-      <div className="flex gap-4 items-center justify-between pb-8">
+      <div className="flex flex-col sm:flex-row gap-4 items-center justify-between pb-8">
         <div className="flex flex-col gap-2">
           <h1 className="text-5xl">{movie.title}</h1>
           <h3 className="text-xl">
@@ -64,7 +64,7 @@ const EventPage = ({ params }) => {
             className="flex items-center justify-center hover:text-magenta-600"
           >
             <ChevronLeft />
-            Precedent
+            Précédent
           </Link>
         ) : (
           <div />

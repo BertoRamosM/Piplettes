@@ -4,11 +4,11 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className="flex justify-between items-center py-12 px-12">
+    <div className="flex justify-between items-center flex-col-reverse sm:flex-row py-12 px-12 text-xs sm:text-sm">
       <Link
         href="/"
         alt="logo"
-        className="flex gap-2 justify-center items-center "
+        className="flex gap-2 justify-center items-center"
       >
         <Image
           src="/illustration.png"
@@ -18,7 +18,7 @@ const Footer = () => {
         />
         <h1 className="font-bold">Les Piplettes de Granville</h1>
       </Link>
-      <div className="flex flex-col font-bold gap-2">
+      <div className="flex sm:flex-col font-bold gap-2 items-center pb-8 sm:pb-0">
         <Link href="/" className="hover:text-greeny-600 px-6">
           Nos prochains événements
         </Link>
