@@ -47,7 +47,7 @@ const EventPage = ({ params }) => {
             ))}
           </div>
         </div>
-        <Image src={movie.image} alt={movie.title} width={200} height={200} />
+        <Image src={movie.image} alt={movie.title} width={200} height={200} priority />
       </div>
       <h4 className="text-2xl text-bold underline pb-2">Synopsis</h4>
       <p className="text-pretty pb-12">{movie.synopsis}</p>
