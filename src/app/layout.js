@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         </Head>
         <body className={`${inter.className} bg-zinc-300`}>
           <Navbar />
-          <div className="text-black pt-20 pb-12 flex flex-col w-full mx-auto lg:w-[920px] rounded-xl px-4 h-auto">
+          <div className="text-black pt-20 pb-12 flex flex-col w-full mx-auto lg:w-[920px] rounded-xl px-4 h-auto overflow-x-hidden">
             {children}
           </div>
           <NewsletterCTA />

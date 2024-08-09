@@ -35,7 +35,7 @@ const NewsletterCTA = () => {
     <div>
       {isVisible || isAnimating ? (
         <div
-          className={`fixed bottom-4 right-4 w-auto bg-magenta-600 text-white p-4 shadow-xl rounded-lg transition-transform duration-500 ease-in-out transform ${
+          className={`fixed bottom-4 right-8 w-auto bg-magenta-600 text-white p-4 shadow-xl rounded-lg transition-transform duration-500 ease-in-out transform ${
             isVisible
               ? isAnimating
                 ? "animate-slide-out-right"

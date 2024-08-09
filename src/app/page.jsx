@@ -85,7 +85,7 @@ export default function Home() {
                 layout="fill"
                 className="object-contain"
               />
-              <div className="absolute left-0 bottom-0 w-full h-auto py-4 bg-black bg-opacity-50 backdrop-blur-xs flex items-center text-white">
+              <div className="absolute left-0 bottom-0 w-full h-auto py-4 bg-black bg-opacity-70 backdrop-blur-xs flex items-center text-white">
                 <div className="text-pretty px-12">
                   <h2 className="text-2xl font-bold pb-2">{movie.title}</h2>
                   <p className="">{movie.desc}</p>

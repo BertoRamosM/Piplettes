@@ -57,7 +57,7 @@ const EventPage = ({ params }) => {
       </div>
       <h4 className="text-2xl text-bold underline pb-2">Synopsis</h4>
       <p className="text-pretty pb-12">{movie.synopsis}</p>
-      <div className="py-8 flex items-center justify-between">
+      <div className="py-2 flex items-center justify-between">
         {nextMovie && currentMovieIndex > 0 ? (
           <Link
             href={`/events/${nextMovie.id}`}

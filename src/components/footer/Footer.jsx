@@ -4,7 +4,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className="flex justify-between items-center flex-col-reverse sm:flex-row py-12 px-12 text-xs sm:text-sm">
+    <div className="flex justify-between items-center flex-col-reverse sm:flex-row py-12 px-12 text-xs sm:text-sm w-screen">
       <Link
         href="/"
         alt="logo"

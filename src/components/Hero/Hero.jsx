@@ -21,7 +21,7 @@ const Hero = () => {
             sur le cinéma. Engagez-vous dans nos Ciné Débats pour des
             discussions enrichissantes et stimulantes après chaque projection.
           </p>
-          <div className="flex items-center justify-between w-full">
+          <div className="flex items-center justify-between w-full flex-col sm:flex-row">
             <div className="relative w-48 h-48 mb-8">
               <Image
                 src="/illustration.png"
