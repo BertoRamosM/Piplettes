@@ -1,21 +1,48 @@
 import { NextResponse } from "next/server";
-import connect from "../../../utils/db"; // Ensure correct path
-import Events from "../../../models/Events"; // Ensure correct path
+import connect from "../../../../utils/db";
+import Events from "../../../../models/Events";
 
-export const GET = async (request) => {
+// GET request to fetch events
+export async function GET(request) {
   try {
-    // Establish a connection to the database
+    // Establish database connection
     await connect();
-    console.log("Database connected for /api/events");
 
-    // Fetch the events from the database
+    // Fetch events sorted by date
     const events = await Events.find().sort({ date: 1 });
-    console.log("Fetched events:", events);
+    console.log("Fetched events:", events); // Log for debugging
 
-    // Return the fetched events as a JSON response
-    return new NextResponse(JSON.stringify(events), { status: 200 });
+    // Return events as a JSON response
+    return NextResponse.json(events, { status: 200 });
   } catch (error) {
     console.error("Error fetching events:", error.stack);
-    return new NextResponse("Database error!", { status: 500 });
+    return NextResponse.json({ error: "Database error!" }, { status: 500 });
   }
-};
+}
+
+// POST request to create a new event
+export async function POST(request) {
+  try {
+    // Establish database connection
+    await connect();
+
+    // Parse the request body
+    const body = await request.json();
+
+    // Create a new event
+    const newEvent = new Events(body);
+    await newEvent.save();
+
+    // Return success message
+    return NextResponse.json(
+      { message: "Event created successfully" },
+      { status: 201 }
+    );
+  } catch (error) {
+    console.error("Error creating event:", error.stack);
+    return NextResponse.json(
+      { error: "Failed to create event" },
+      { status: 500 }
+    );
+  }
+}
