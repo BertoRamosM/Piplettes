@@ -13,12 +13,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const resBlog = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/events`
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/blogs`
   );
   const blogs = await resBlog.json();
 
   const blogEntries: MetadataRoute.Sitemap = blogs.map(({ _id }) => ({
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}/events/${_id}`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${_id}`,
   }));
   
   
