@@ -13,7 +13,6 @@ export const metadata = {
   },
 };
 
-// Helper function to check if the event date has passed
 const isDatePassed = (dateString) => {
   if (!dateString) return false;
   const eventDate = new Date(dateString);
@@ -25,28 +24,19 @@ const isDatePassed = (dateString) => {
   return eventDate < today;
 };
 
-// The page component using async data fetching
 const EventsPage = async () => {
   let events = [];
   let error = null;
 
   try {
-    // Fetching data from the API with no cache
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/events`, {
-      cache: "no-store", // Ensures fresh data every time
-    });
-
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/events`, {cache: 'no-store'});
     if (!res.ok) {
-      throw new Error(`Failed to fetch events: ${res.statusText}`);
+      throw new Error("Failed to fetch events");
     }
-
-    // Parsing the JSON response
     events = await res.json();
 
-    // Filter events to show only past events
     events = events.filter((event) => isDatePassed(event.date));
   } catch (err) {
-    // Error handling
     error = err.message;
   }
 
