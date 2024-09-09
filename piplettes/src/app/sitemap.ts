@@ -1,27 +1,21 @@
 import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  
-
-  
-  const resEvents = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/events`,
-    );
+  const resEvents = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/events`
+  );
   const events = await resEvents.json();
-  
+
   const eventsEntries: MetadataRoute.Sitemap = events.map(({ _id }) => ({
     url: `${process.env.NEXT_PUBLIC_BASE_URL}/events/${_id}`,
   }));
 
-  const resBlog = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/events`
-  );
+  const resBlog = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/events`);
   const blogs = await resBlog.json();
 
   const blogEntries: MetadataRoute.Sitemap = blogs.map(({ _id }) => ({
     url: `${process.env.NEXT_PUBLIC_BASE_URL}/events/${_id}`,
   }));
-  
-  
 
   return [
     {
