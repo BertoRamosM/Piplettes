@@ -32,8 +32,7 @@ const EventsPage = async () => {
 
   // Fallback for base URL if NEXT_PUBLIC_BASE_URL is undefined
   const baseUrl =
-    process.env.NEXT_PUBLIC_BASE_URL ||
-    "https://your-fallback-production-url.com";
+    process.env.NEXT_PUBLIC_BASE_URL || "https://piplettes.vercel.app/";
 
   try {
     // Log the URL being fetched (for debugging purposes)
