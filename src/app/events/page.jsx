@@ -39,7 +39,7 @@ const EventsPage = async () => {
     console.log("Fetching events from:", `${baseUrl}/api/events`);
 
     // Fetch the events from the API
-    const res = await fetch(`${baseUrl}/api/events`);
+    const res = await fetch(`https://piplettes.vercel.app/api/events`);
 
     // If the response is not OK, throw an error
     if (!res.ok) {
