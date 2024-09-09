@@ -13,7 +13,13 @@ export async function GET(request) {
     console.log("Fetched events:", events); // Log for debugging
 
     // Return events as a JSON response
-    return NextResponse.json(events, { status: 200 });
+    return new NextResponse(JSON.stringify(events), {
+      status: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*", // Allow all origins
+        "Content-Type": "application/json",
+      },
+    });
   } catch (error) {
     console.error("Error fetching events:", error.stack);
     return NextResponse.json({ error: "Database error!" }, { status: 500 });
