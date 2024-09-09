@@ -29,12 +29,7 @@ const EventsPage = async () => {
   let error = null;
 
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/events`, {
-      method: "GET",
-      headers: {
-        "Cache-Control": "no-store",
-      },
-    });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/events`, { cache: 'no-store' });
     events = await res.json();
 
     events = events.filter((event) => isDatePassed(event.date));
