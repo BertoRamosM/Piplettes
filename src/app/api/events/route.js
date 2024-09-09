@@ -10,9 +10,7 @@ export const GET = async () => {
     console.log("Fetched events:", events);
    return new NextResponse(JSON.stringify(events), {
      status: 200,
-     headers: {
-       "Access-Control-Allow-Origin": "*",
-     },
+     headers: { "Content-Type": "application/json" },
    });
   } catch (error) {
     console.error("Error fetching events:", error.stack); // Log the full error stack
