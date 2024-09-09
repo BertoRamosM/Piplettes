@@ -8,13 +8,8 @@ export async function GET() {
 
     const events = await Events.find().sort({ date: 1 });
     console.log("Fetched events:", events);
-   return new NextResponse(JSON.stringify(events), {
-     status: 200,
-     headers: {
-       "Content-Type": "application/json",
-       "Access-Control-Allow-Origin": "*",
-     },
-   });
+      return NextResponse.json(events, { status: 200 });
+
   } catch (error) {
     console.error("Error fetching events:", error.stack); // Log the full error stack
     return new NextResponse("Database error!", { status: 500 });
