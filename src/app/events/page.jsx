@@ -13,7 +13,6 @@ export const metadata = {
   },
 };
 
-// Helper function to check if the event date has passed
 const isDatePassed = (dateString) => {
   if (!dateString) return false;
   const eventDate = new Date(dateString);
@@ -25,39 +24,19 @@ const isDatePassed = (dateString) => {
   return eventDate < today;
 };
 
-// Main EventsPage component
 const EventsPage = async () => {
   let events = [];
   let error = null;
 
-  // Fallback for base URL if NEXT_PUBLIC_BASE_URL is undefined
-  const baseUrl =
-    process.env.NEXT_PUBLIC_BASE_URL || "https://piplettes.vercel.app/";
-
   try {
-    // Log the URL being fetched (for debugging purposes)
-    console.log("Fetching events from:", `${baseUrl}/api/events`);
-
-    // Fetch the events from the API
-    const res = await fetch(`https://piplettes.vercel.app/api/events`);
-
-    // If the response is not OK, throw an error
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/events`);
     if (!res.ok) {
-      throw new Error(
-        `Failed to fetch events: ${res.status} ${res.statusText}`
-      );
+      throw new Error("Failed to fetch events");
     }
-
-    // Parse the response as JSON
     events = await res.json();
 
-    // Filter out events where the date has already passed
     events = events.filter((event) => isDatePassed(event.date));
   } catch (err) {
-    // Log the error (for debugging purposes)
-    console.error("Error fetching events:", err.message);
-
-    // Set the error message to display to the user
     error = err.message;
   }
 
@@ -73,10 +52,8 @@ const EventsPage = async () => {
       </h2>
 
       {error ? (
-        // Display the error message if there was a problem fetching data
         <div>Error loading data: {error}</div>
       ) : (
-        // Render the EventsGallery component with the fetched events
         <EventsGallery events={events} />
       )}
     </div>

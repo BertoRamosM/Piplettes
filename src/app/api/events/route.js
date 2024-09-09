@@ -1,54 +1,49 @@
 import { NextResponse } from "next/server";
 import connect from "../../../utils/db";
-import Events from "../../../models/Events";
+import Events from "../../../models/Events.js";
 
-// GET request to fetch events
-export async function GET(request) {
+export const GET = async (request) => {
   try {
-    // Establish database connection
     await connect();
 
-    // Fetch events sorted by date
     const events = await Events.find().sort({ date: 1 });
-    console.log("Fetched events:", events); // Log for debugging
-
-    // Return events as a JSON response
-    return new NextResponse(JSON.stringify(events), {
-      status: 200,
-      headers: {
-        "Access-Control-Allow-Origin": "*", // Allow all origins
-        "Content-Type": "application/json",
-      },
-    });
+    console.log("Fetched events:", events);
+    return new NextResponse(JSON.stringify(events), { status: 200 });
   } catch (error) {
-    console.error("Error fetching events:", error.stack);
-    return NextResponse.json({ error: "Database error!" }, { status: 500 });
+    console.error("Error fetching events:", error.stack); // Log the full error stack
+    return new NextResponse("Database error!", { status: 500 });
   }
-}
+};
 
-// POST request to create a new event
-export async function POST(request) {
+export const POST = async (request) => {
   try {
-    // Establish database connection
     await connect();
 
-    // Parse the request body
     const body = await request.json();
+    console.log("Request body:", body); // Log the request body for debugging
 
-    // Create a new event
-    const newEvent = new Events(body);
+    const newEvent = new Events({
+      title: body.title,
+      director: body.director,
+      desc: body.desc,
+      synopsis: body.synopsis,
+      image: body.image,
+      date: body.date || null,
+      hour: body.hour || "",
+      day: body.day || "",
+      month: body.month || "",
+      themes: body.themes || [],
+      release: body.release,
+    });
+
     await newEvent.save();
+    console.log("Event created:", newEvent); // Log the created event
 
-    // Return success message
-    return NextResponse.json(
-      { message: "Event created successfully" },
-      { status: 201 }
-    );
+    return new NextResponse("Event created successfully", { status: 201 });
   } catch (error) {
-    console.error("Error creating event:", error.stack);
-    return NextResponse.json(
-      { error: "Failed to create event" },
-      { status: 500 }
-    );
+    console.error("Error creating event:", error.stack); // Log the full error stack
+    return new NextResponse(`Failed to create event: ${error.message}`, {
+      status: 500,
+    });
   }
-}
+};
