@@ -4,17 +4,18 @@ import Events from "../../../models/Events.js";
 
 export const GET = async (request) => {
   try {
-    await connect();
+    await connect(); // Ensure the database connection is successful
+    console.log("Database connected");
 
-    const events = await Events.find().sort({ date: 1 });
-    console.log("Fetched events:", events);
-    return new NextResponse(JSON.stringify(events), { status: 200 });
+    const events = await Events.find().sort({ date: 1 }); // Fetch events from the database
+    console.log("Fetched events:", events); // Log the events data
+
+    return new NextResponse(JSON.stringify(events), { status: 200 }); // Return the events data
   } catch (error) {
-    console.error("Error fetching events:", error.stack); // Log the full error stack
+    console.error("Error fetching events:", error.stack); // Log the error stack trace
     return new NextResponse("Database error!", { status: 500 });
   }
 };
-
 export const POST = async (request) => {
   try {
     await connect();
