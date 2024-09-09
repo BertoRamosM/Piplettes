@@ -1,0 +1,132 @@
+[
+  {
+    "id": "1",
+    "title": "La Fille de Brest",
+    "director": "Emmanuel Bercot",
+    "desc": "La Fille de Brest est un film français réalisé par Emmanuelle Bercot, sorti en France le 23 novembre 2016.",
+    "synopsis": "Dans son hôpital de Brest, une pneumologue découvre un lien direct entre des morts suspectes et la prise d'un médicament commercialisé depuis 30 ans, le Mediator. De l`isolement des débuts à l`explosion médiatique de l`affaire, l`histoire inspirée de la vie d`Irène Frachon est une bataille de David contre Goliath pour voir enfin triompher la vérité",
+    "image": "https://fr.web.img3.acsta.net/pictures/16/09/20/11/58/588230.jpg",
+    "date": "23/06/2023",
+    "time": "Vendredi 20:30h",
+    "themes": ["Film", "Religion", "Politique"],
+    "release" : "2020"
+  },
+  {
+    "id": "2",
+    "title": "Media Crash",
+    "director": "Valentine Oberti et Luc Hermann",
+    "desc": "Qui a tué le débat public?",
+    "synopsis": "Il y a ce que vous voyez, ce que certains souhaitent que vous voyiez, et ce que vous ne voyez pas. Jamais la France n’a connu une telle concentration des médias privés. Quelques industriels milliardaires, propriétaires de télévisions, radios, journaux utilisent leurs médias pour défendre leurs intérêts privés. Au détriment de l'information d’intérêt public. En cachant ce qui est essentiel, en grossissant ce qui est accessoire, ces médias façonnent, orientent, hystérisent pour certains le débat. Avec la complicité de certains responsables politiques, qui s`en accommodent volontiers. Mediapart et Premières Lignes vous racontent les coulisses des grands médias.",
+    "image": "https://fr.web.img4.acsta.net/pictures/22/02/01/16/26/1880267.jpg",
+    "date": "24/06/2023",
+    "time": "Samedi 14:00h",
+    "themes": ["Documentaire", "Politique"],
+    "release": "2022"
+  },
+  {
+    "id": "3",
+    "title": "Hacking Justice",
+    "director": "Clara López Rubio, Juan Pancorbo",
+    "desc": "In 2012, Julian Assange, editor of WikiLeaks, takes refuge in the Embassy of Ecuador in London.",
+    "synopsis": "Voici l’histoire glorieuse et bouleversante de Julian Assange et de sa traque menée par les États-Unis et leurs vassaux dans une nouvelle version de l’éternel combat de Spartacus contre l’Empire. Suivant pas à pas la défense du fondateur de WikiLeaks, coordonnée par l’avocat espagnol Baltasar Garzón, mondialement connu pour avoir fait interpeller l’ancien dictateur chilien Augusto Pinochet, les réalisateurs ont parcouru le monde pendant neuf ans pour retisser cette histoire aux implications politiques profondes. Dans une démocratie, la liberté d’informer est un minimum vital et ne peut être une option, quelles que soient nos opinions politiques. Cette histoire concerne chacun d’entre nous.",
+    "image": "https://fr.web.img6.acsta.net/pictures/21/11/02/17/51/5403060.jpg",
+    "date": "25/06/2023",
+    "time": "Dimanche 14:30h",
+    "themes": ["Film", "Politique"],
+    "release": "2017"
+  },
+  {
+    "id": "4",
+    "title": "Des soignants entre deux mondes",
+    "director": "Fabien Moine",
+    "desc": "Ce documentaire revient sur deux années de crise et décortique un système entier dans lequel les soignants auront été utilisés et manipulés.",
+    "synopsis": "Le 12 juillet 2021, sans concertation, les soignants du pays ont été confrontés à un choix : conserver leur emploi en ayant recours à une série d’injections médicales ou être suspendus de leurs fonctions au 15 septembre. Ce documentaire revient sur deux années de crise et décortique un système entier dans lequel les soignants auront été utilisés et manipulés. Caroline Blondel, Gregory Pamart, Carole Fouché, Louis Fouché, Judith Rémy, Éric Loridan et Aurélie Colin nous racontent leur vécu, leurs désillusions et leurs espoirs.",
+    "image": "https://fr.web.img4.acsta.net/pictures/22/06/17/16/50/4551513.jpg",
+    "date": "06/12/2023",
+    "time": "Mardi 20:30h",
+    "themes": ["Documentaire", "Politique"],
+    "release": "2022"
+  },
+  {
+    "id": "5",
+    "title": "Même la pluie",
+    "director": "Icíar Bollaín",
+    "desc": "Sebastian, un jeune réalisateur passionné, et son producteur arrivent en Bolivie pour tourner un film. Ils se retrouvent rapidement pris dans la lutte pour la survie des habitants locaux.",
+    "synopsis": "Sebastian, jeune réalisateur passionné et son producteur arrivent dans le décor somptueux des montagnes boliviennes pour entamer le tournage d'un film. Les budgets de production sont serrés et Costa, le producteur, se félicite de pouvoir employer des comédiens et des figurants locaux à moindre coût. Mais bientôt le tournage est interrompu par la révolte menée par l'un des principaux figurants contre le pouvoir en place qui souhaite privatiser l'accès à l'eau courante. Costa et Sebastian se trouvent malgré eux emportés dans cette lutte pour la survie d'un peuple démuni. Ils devront choisir entre soutenir la cause de la population et la poursuite de leur propre entreprise sur laquelle ils ont tout misé. Ce combat pour la justice va bouleverser leur existence.",
+    "image": "https://fr.web.img5.acsta.net/medias/nmedia/18/81/96/10/19587371.jpg",
+    "date": "21/03/2023",
+    "time": "Mardi 20:30h",
+    "themes": ["Film", "Religion", "Politique"],
+    "release": "2010"
+  },
+  {
+    "id": "6",
+    "title": "Le Monde d'après",
+    "director": "Laurent Firode",
+    "desc": "Découvrez un Paris post-pandémique où les masques révèlent bien plus que des visages.",
+    "synopsis": "Une soirée dans un immeuble parisien où l’on découvre neuf situations qui chacune évoquent un sujet de société brûlant : crise sanitaire, luttes féministes, transhumanisme, Islam, mouvements identitaires (liste non exhaustive ! )... Sans aucun jugement mais avec humour, parfois burlesque, parfois grinçant, et le tout arrosé d’une bonne dose d’émotion. Et tous ces personnages hauts en couleur vont se retrouver réunis dans un final flamboyant.",
+    "image": "https://fr.web.img6.acsta.net/pictures/22/07/22/15/57/0063257.jpg",
+    "date": "21/03/2023",
+    "time": "Mardi 20:30h",
+    "themes": ["Film", "Politique"],
+    "release": "2022"
+  },
+  {
+    "id": "7",
+    "title": "Et maintenant on va où ?",
+    "director": "Nadine Labaki",
+    "desc": "Dans un village libanais isolé, les femmes s'unissent pour éviter que la guerre ne sépare leurs communautés.",
+    "synopsis": "Sur le chemin qui mène au cimetière du village, une procession de femmes en noir affronte la chaleur du soleil, serrant contre elles les photos de leurs époux, leurs pères ou leurs fils. Certaines portent le voile, d’autres une croix, mais toutes partagent le même deuil, conséquence d’une guerre funeste et inutile. Arrivé à l’entrée du cimetière, le cortège se sépare en deux : l’un musulman, l’autre chrétien.Avec pour toile de fond un pays déchiré par la guerre, Et maintenant on va où ? raconte la détermination sans faille d’un groupe de femmes de toutes religions, à protéger leur famille et leur village des menaces extérieures. Faisant preuve d’une grande ingéniosité, inventant de drôles de stratagèmes, unies par une amitié indéfectible, les femmes n’auront qu’un objectif : distraire l’attention des hommes et leur faire oublier leur colère et leur différence. Mais quand les événements prendront un tour tragique, jusqu’où seront-elles prêtes à aller pour éviter de perdre ceux qui restent ?",
+    "image": "https://fr.web.img6.acsta.net/medias/nmedia/18/84/43/34/19783842.jpg",
+    "date": "14/12/2023",
+    "time": "Jeudi 20:30h",
+    "themes": ["Documentaire", "Religion", "Politique"],
+    "release": "2011"
+  },
+  {
+    "id": "8",
+    "title": "Ithaka",
+    "director": "Ben Lawrence",
+    "desc": "Filmé sur deux ans à travers le Royaume-Uni, l'Europe et les États-Unis, une exploration de la campagne inlassable de John Shipton, un constructeur retraité de 76 ans, pour sauver son fils, Julian Assange.",
+    "synopsis": "La campagne pour libérer Julian Assange prend une dimension intime dans ce portrait documentaire du combat d’une famille pour sauver un proche. Nous suivons ici au plus près John Shipton et Stella Assange, respectivement le père et l’épouse du fondateur de WikiLeaks. Sans doute le prisonnier politique le plus célèbre au monde, le journaliste Julian Assange est l’emblème d’un bras de fer international sur la liberté de la presse, la corruption gouvernementale et les crimes de guerre impunis. Pour les membres de sa famille qui risquent de le perdre à jamais dans l’abîme du système judiciaire états-unien, cependant, cette lutte entre David et Goliath est personnelle - et, avec sa santé déclinante dans une prison britannique de haute sécurité et Washington mettant tout en œuvre pour l’extrader, le temps est compté.",
+    "image": "https://fr.web.img2.acsta.net/pictures/23/11/22/11/28/1700861.jpg",
+    "date": "25/02/2024",
+    "time": "Jeudi 20:00h",
+    "themes": ["Documentaire", "Politique"],"release": "2021"
+  },
+  {
+    "id": "9",
+    "title": "L'Enquête",
+    "director": "Vincent Garenq",
+    "desc": "Plongez au cœur de l'affaire Clearstream, où un journaliste obstiné dévoile les sombres secrets de la finance mondiale.",
+    "synopsis": "2001. Le journaliste Denis Robert met le feu aux poudres dans le monde de la finance en dénonçant le fonctionnement opaque de la société bancaire Clearstream. Sa quête de vérité pour tenter de révéler `l'Affaire des affaires` va rejoindre celle du juge Renaud Van Ruymbeke, très engagé contre la corruption. Leurs chemins vont les conduire au cœur d'une machination politico-financière baptisée `l'affaire Clearstream` qui va secouer la Vème République.",
+    "image": "https://fr.web.img6.acsta.net/pictures/14/10/31/16/53/311216.jpg",
+    "date": "26/02/2024",
+    "time": "Lundi 20:00h",
+    "themes": ["Film", "Politique"]
+  },
+  {
+    "id": "10",
+    "title": "Citizenfour",
+    "director": "Laura Poitras",
+    "desc": "Après que Laura Poitras a reçu des e-mails cryptés de quelqu'un ayant des informations sur les vastes programmes de surveillance clandestins du gouvernement, elle et le journaliste Glenn Greenwald se sont envolés pour Hong Kong afin de rencontrer l'expéditeur, qui s'est avéré être Edward Snowden.",
+    "synopsis": "En 2013, Edward Snowden déclenche l’un des plus grands séismes politiques aux Etats-Unis en révélant des documents secret-défense de la NSA. Sous le nom le code « CITIZENFOUR », il contacte la documentariste américaine Laura Poitras. Elle part le rejoindre à Hong Kong et réalise en temps réel CITIZENFOUR, un document historique unique et un portrait intime d’Edward Snowden.",
+    "image": "https://www.hautetcourt.com/wp-content/uploads/2019/06/citizenfour-affiche-768x1024.jpg",
+    "date": "28/03/2024",
+    "time": "Jeudi 20:30h",
+    "themes": ["Documentaire", "Politique"],
+    "release": "2014"
+  },
+  {
+    "id": "11",
+    "title": "Enquête sur un scandale d'état",
+    "director": "Thierry de Peretti",
+    "desc": "Stéphane Vilner, un jeune journaliste, qui est contacté par Hubert Antoine, un ancien infiltré des stups, après une saisie de sept tonnes de cannabis à Paris. Ensemble, ils dévoilent un scandale impliquant les autorités françaises.",
+    "synopsis": "Octobre 2015. Les douanes françaises saisissent sept tonnes de cannabis en plein cœur de la capitale. Le jour même, un ancien infiltré des stups, Hubert Antoine, contacte Stéphane Vilner, jeune journaliste à Libération. Il prétend pouvoir démontrer l’existence d’un trafic d’État dirigé par Jacques Billard, un haut gradé de la police française. D’abord méfiant, Stéphane finit par plonger dans une enquête qui le mènera jusqu'aux recoins les plus sombres de la République.",
+    "image": "https://fr.web.img4.acsta.net/pictures/22/01/20/16/13/2711733.jpg",
+    "date": "25/04/2024",
+    "time": "Jeudi 20:30h",
+    "themes": ["Film", "Religion", "Politique"],
+    "release": "2015"
+  }
+]
