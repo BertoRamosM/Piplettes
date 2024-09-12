@@ -5,11 +5,9 @@ import { Link } from "next-view-transitions";
 const Hero = () => {
   return (
     <section className="">
-      <div className="container mx-auto flex flex-col px-4 text-pretty md:px-10 lg:px-32 pb-24">
-        <h1 className="text-4xl font-bold leading-none sm:text-5xl">
-          <span className="text-orangy-600">Les Piplettes </span>
-          de Granville
-        </h1>
+      <div className="container mx-auto flex flex-col px-4 text-pretty md:px-10 lg:px-32 pb-24 jutify-center">
+        <Image src={"/texte.png"} alt="logo" width={200} height={160} />
+      
         <h2 className="text-xl font-bold leading-none pl-1 pt-2">
           Explorez,
           <span className="text-magenta-600"> Découvrez</span>, Débattez
