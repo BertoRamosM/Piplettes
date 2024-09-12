@@ -47,8 +47,9 @@ const EventsPage = async () => {
         <ArchiveIcon />
         <h1 className="text-2xl font-bold text-left">Nos archives</h1>
       </div>
-      <h2 className="pb-12 text-magenta-600 font-bold">
-        Naviguez à travers nos événements précédents.
+      <h2 className="pb-12 text-magenta-600 font-bold text-pretty">
+        Elles sont classées par ordre chronologique. <br></br>Vous pouvez effectuer des
+        recherches sur un évènement en particulier, par titre ou par thème.
       </h2>
 
       {error ? (

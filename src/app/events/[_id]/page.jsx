@@ -104,13 +104,13 @@ const EventPage = async ({ params }) => {
           </span>
         </div>
         <div className="relative overflow-hidden">
-                    <BlurImage
-            image={movie.image} 
+          <BlurImage
+            image={movie.image}
             alt={movie.title}
             width={300}
             height={300}
             zoomIn={true}
-            className="rounded-md w-full h-full object-contain" 
+            className="rounded-md w-full h-full object-contain"
           />
         </div>
       </div>
@@ -128,7 +128,7 @@ const EventPage = async ({ params }) => {
             href={`/events/${prevMovie._id}`}
             className="flex items-center justify-center hover:text-magenta-600 absolute right-0"
           >
-            Suivant
+            Archive suivante
             <ChevronRight />
           </Link>
         ) : null}
@@ -139,7 +139,7 @@ const EventPage = async ({ params }) => {
             className="flex items-center justify-center hover:text-magenta-600 absolute left-0"
           >
             <ChevronLeft />
-            Précédent
+            Archive précédente
           </Link>
         ) : null}
       </div>

@@ -111,7 +111,7 @@ const Navbar = () => {
             }`}
             aria-label="Learn more about us"
           >
-            À propos
+            Présentation
           </Link>
           <Link
             href="/contact"
@@ -171,7 +171,7 @@ const Navbar = () => {
           }`}
           aria-label="Learn more about us"
         >
-          À propos
+          Présentation
         </Link>
         <Link
           href="/contact"
