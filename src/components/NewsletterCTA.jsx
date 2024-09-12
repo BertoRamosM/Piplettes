@@ -64,7 +64,7 @@ const NewsletterCTA = () => {
                     <div className="flex sm:gap-2 items-center justify-center pt-2 sm:pt-0">
                       <BellIcon />
                       <h3 className="text-lg font-bold text-white">
-                        Inscrivez-vous à notre newsletter!
+                        S&apos;incrire pour recevoir notre information
                       </h3>
                     </div>
                     <div>

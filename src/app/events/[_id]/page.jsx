@@ -107,8 +107,8 @@ const EventPage = async ({ params }) => {
           <BlurImage
             image={movie.image}
             alt={movie.title}
-            width={300}
-            height={300}
+            width={200}
+            height={200}
             zoomIn={true}
             className="rounded-md w-full h-full object-contain"
           />

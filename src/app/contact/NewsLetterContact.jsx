@@ -17,12 +17,12 @@ const NewsLetterContact = () => {
     <MailchimpSubscribe
       url={MAILCHIMP_URL}
       render={({ subscribe, status, message }) => (
-        <div className="relative p-4 bg-transparemt rounded-lg text-zinc-800 py-12">
+        <div className="relative p-4 bg-transparemt rounded-lg text-zinc-800 py-16">
           <div className="flex flex-col justify-between items-center gap-4">
             <div className="flex sm:gap-2 items-center justify-center pt-2 sm:pt-0">
               <BellIcon />
               <h3 className="text-lg font-bold">
-                Inscrivez-vous à notre newsletter!
+                S&apos;incrire pour recevoir notre information{" "}
               </h3>
             </div>
             <div>
