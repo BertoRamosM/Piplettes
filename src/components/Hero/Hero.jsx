@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className="">
       <div className="container mx-auto flex flex-col px-4 text-pretty md:px-10 lg:px-32 pb-24 jutify-center">
-        <Image src={"/texte.png"} alt="logo" width={200} height={160} />
+        <Image src={"/texte.png"} alt="logo" width={200} height={140} />
       
         <h2 className="text-xl font-bold leading-none pl-1 pt-2">
           Explorez,

@@ -66,11 +66,11 @@ const Navbar = () => {
       {isOpen && (
         <div className="flex lg:hidden bg-black bg-opacity-80 h-screen w-screen fixed inset-0 z-40 flex-col items-center justify-center sm:text-2xl gap-16 text-xl">
           <Link
-            href="/#events"
+            href="/"
             onClick={handleClick}
             className={`px-6 ${
-              isActive("/#events")
-                ? "font-bold underline text-black"
+              isActive("/")
+                ? "font-bold underline text-greeny-600"
                 : "text-white hover:text-magenta-700 transition-all hover:scale-105"
             }`}
             aria-label="View upcoming events"
@@ -82,7 +82,7 @@ const Navbar = () => {
             onClick={handleClick}
             className={`px-6 ${
               isActive("/events")
-                ? "font-bold underline text-black"
+                ? "font-bold underline text-greeny-600"
                 : "text-white hover:text-magenta-700 transition-all hover:scale-105"
             }`}
             aria-label="View event archives"
@@ -94,7 +94,7 @@ const Navbar = () => {
             onClick={handleClick}
             className={`px-6 ${
               isActive("/blog")
-                ? "font-bold underline text-black"
+                ? "font-bold underline text-greeny-600"
                 : "text-white hover:text-magenta-700 transition-all hover:scale-105"
             }`}
             aria-label="View blog"
@@ -106,7 +106,7 @@ const Navbar = () => {
             onClick={handleClick}
             className={`px-6 ${
               isActive("/about")
-                ? "font-bold underline text-black"
+                ? "font-bold underline text-greeny-600"
                 : "text-white hover:text-magenta-700 transition-all hover:scale-105"
             }`}
             aria-label="Learn more about us"
@@ -118,7 +118,7 @@ const Navbar = () => {
             onClick={handleClick}
             className={`px-6 ${
               isActive("/contact")
-                ? "font-bold underline text-black"
+                ? "font-bold underline text-greeny-600"
                 : "text-white hover:text-magenta-700 transition-all hover:scale-105"
             }`}
             aria-label="Contact us"
