@@ -34,7 +34,7 @@ const Navbar = () => {
             alt="les Piplettes de granville logo"
             width={120}
             height={120}
-            className="object-cover "
+            className="object-cover filter grayscale-[100%] brightness-[0%] contrast-[1000%]"
           />
         </Link>
       </div>
@@ -155,9 +155,7 @@ const Navbar = () => {
           href="/blog"
           onClick={handleClick}
           className={` px-6 ${
-            isActive("/blog")
-              ? "text-black font-bold underline"
-              : "text-white"
+            isActive("/blog") ? "text-black font-bold underline" : "text-white"
           }`}
           aria-label="Contact us"
         >
