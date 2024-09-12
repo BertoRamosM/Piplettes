@@ -34,7 +34,7 @@ const Hero = () => {
               <Link href="#events">
                 <button
                   aria-label="Voir nos prochains événements"
-                  className="bg-transparent border-2 border-magenta-600 text-magenta-600 w-max p-2 mt-2 hover:text-greeny-600 transition duration-300 hover:scale-105 cursor-pointer flex items-start justify-start font-bold h-max"
+                  className="bg-transparent border-2 border-magenta-600 text-magenta-600 w-max p-2 mt-2 hover:text-greeny-600 hover:border-greeny-600 transition duration-300 hover:scale-105 cursor-pointer flex items-start justify-start font-bold h-max"
                 >
                   Nos prochains événements
                 </button>

@@ -26,9 +26,9 @@ const Navbar = () => {
   };
 
   return (
-    <div className=" flex justify-between items-center py-4 px-12 bg-orangy-600 sticky top-0 text-white font-bold z-50">
+    <div className="flex justify-between items-center py-4 px-12 bg-orangy-600 sticky top-0 text-white font-bold z-50">
       <div>
-        <Link href="/" className="">
+        <Link href="/">
           <Image
             src="/texte.png"
             alt="les Piplettes de granville logo"
@@ -68,10 +68,10 @@ const Navbar = () => {
           <Link
             href="/#events"
             onClick={handleClick}
-            className={`hover:text-greeny-600 px-6 ${
-              isActive("/")
-                ? "text-greeny-600 font-bold underline"
-                : "text-white"
+            className={`px-6 ${
+              isActive("/#events")
+                ? "font-bold underline text-black"
+                : "text-white hover:text-magenta-700 transition-all hover:scale-105"
             }`}
             aria-label="View upcoming events"
           >
@@ -80,36 +80,34 @@ const Navbar = () => {
           <Link
             href="/events"
             onClick={handleClick}
-            className={`hover:text-greeny-700 px-6 ${
+            className={`px-6 ${
               isActive("/events")
-                ? "text-greeny-700 font-bold underline"
-                : "text-white"
+                ? "font-bold underline text-black"
+                : "text-white hover:text-magenta-700 transition-all hover:scale-105"
             }`}
             aria-label="View event archives"
           >
             Archives
           </Link>
-
           <Link
             href="/blog"
             onClick={handleClick}
-            className={`hover:text-greeny-700 px-6 ${
+            className={`px-6 ${
               isActive("/blog")
-                ? "text-greeny-700 font-bold underline"
-                : "text-white"
+                ? "font-bold underline text-black"
+                : "text-white hover:text-magenta-700 transition-all hover:scale-105"
             }`}
-            aria-label="View event archives"
+            aria-label="View blog"
           >
             Blog
           </Link>
-
           <Link
             href="/about"
             onClick={handleClick}
-            className={`hover:text-greeny-600 px-6 ${
+            className={`px-6 ${
               isActive("/about")
-                ? "text-greeny-600 font-bold underline"
-                : "text-white"
+                ? "font-bold underline text-black"
+                : "text-white hover:text-magenta-700 transition-all hover:scale-105"
             }`}
             aria-label="Learn more about us"
           >
@@ -118,10 +116,10 @@ const Navbar = () => {
           <Link
             href="/contact"
             onClick={handleClick}
-            className={`hover:text-greeny-600 px-6 ${
+            className={`px-6 ${
               isActive("/contact")
-                ? "text-greeny-600 font-bold underline"
-                : "text-white"
+                ? "font-bold underline text-black"
+                : "text-white hover:text-magenta-700 transition-all hover:scale-105"
             }`}
             aria-label="Contact us"
           >
@@ -132,9 +130,11 @@ const Navbar = () => {
 
       <div className="justify-between items-center hidden lg:flex">
         <Link
-          href="/#events"
-          className={`px-6  ${
-            isActive("/") ? "text-black font-bold underline" : "text-white"
+          href="/"
+          className={`px-6 ${
+            isActive("/")
+              ? "font-bold underline text-black"
+              : "text-white hover:text-magenta-700 transition-all hover:scale-105"
           }`}
           aria-label="View upcoming events"
         >
@@ -142,10 +142,10 @@ const Navbar = () => {
         </Link>
         <Link
           href="/events"
-          className={`px-6  ${
+          className={`px-6 ${
             isActive("/events")
-              ? "text-black font-bold underline"
-              : "text-white"
+              ? "font-bold underline text-black"
+              : "text-white hover:text-magenta-700 transition-all hover:scale-105"
           }`}
           aria-label="View event archives"
         >
@@ -153,18 +153,21 @@ const Navbar = () => {
         </Link>
         <Link
           href="/blog"
-          onClick={handleClick}
-          className={` px-6 ${
-            isActive("/blog") ? "text-black font-bold underline" : "text-white"
+          className={`px-6 ${
+            isActive("/blog")
+              ? "font-bold underline text-black"
+              : "text-white hover:text-magenta-700 transition-all hover:scale-105"
           }`}
-          aria-label="Contact us"
+          aria-label="View blog"
         >
           Blog
         </Link>
         <Link
           href="/about"
-          className={`px-6  ${
-            isActive("/about") ? "text-black font-bold underline" : "text-white"
+          className={`px-6 ${
+            isActive("/about")
+              ? "font-bold underline text-black"
+              : "text-white hover:text-magenta-700 transition-all hover:scale-105"
           }`}
           aria-label="Learn more about us"
         >
@@ -172,10 +175,10 @@ const Navbar = () => {
         </Link>
         <Link
           href="/contact"
-          className={`px-6  ${
+          className={`px-6 ${
             isActive("/contact")
-              ? "text-black font-bold underline"
-              : "text-white"
+              ? "font-bold underline text-black"
+              : "text-white hover:text-magenta-700 transition-all hover:scale-105"
           }`}
           aria-label="Contact us"
         >
@@ -184,12 +187,12 @@ const Navbar = () => {
         {status === "authenticated" && (
           <Link
             href="/admin"
-            className={`px-6  ${
+            className={`px-6 ${
               isActive("/admin")
-                ? "text-black font-bold underline"
-                : "text-white"
+                ? "font-bold underline text-black"
+                : "text-white hover:text-magenta-700 transition-all hover:scale-105"
             }`}
-            aria-label="ajout"
+            aria-label="Admin"
           >
             Ajout
           </Link>
@@ -197,7 +200,7 @@ const Navbar = () => {
         {status === "authenticated" && (
           <button
             onClick={handleLogout}
-            className="px-6 text-white font-bold underline"
+            className="px-6 text-white font-bold underline hover:text-magenta-700 transition-all hover:scale-105"
             aria-label="Logout"
           >
             Logout
