@@ -8,7 +8,6 @@ import ArrowLeft from "./icons/ArrowLeft";
 import ArrowRight from "./icons/ArrowRight";
 import Loader from "../utils/Loader";
 
-// Function to format the date to DD/MM/YYYY
 const formatDateToDDMMYYYY = (dateString) => {
   if (!dateString) return null;
 
@@ -141,7 +140,7 @@ const Carousel = () => {
               <Image
                 src={event.image}
                 alt={event.title}
-                layout="fill"
+                fill
                 className="object-contain"
                 onLoadingComplete={handleImageLoad}
                 priority={index === 0}
