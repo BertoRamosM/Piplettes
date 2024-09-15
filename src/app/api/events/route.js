@@ -20,7 +20,7 @@ export const POST = async (request) => {
     await connect();
 
     const body = await request.json();
-    console.log("Request body:", body); // Log the request body for debugging
+    console.log("Request body:", body);
 
     const newEvent = new Events({
       title: body.title,

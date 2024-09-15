@@ -21,7 +21,6 @@ const eventSchema = new Schema({
   },
   image: {
     type: String,
-    unique: true,
     required: true,
   },
   date: {
