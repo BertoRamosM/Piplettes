@@ -3,6 +3,7 @@ import connect from "../../../utils/db.js";
 import BlogPosts from "../../../models/Posts.js";
 
 export const GET = async (request) => {
+  console.log(request);
   try {
     await connect();
 

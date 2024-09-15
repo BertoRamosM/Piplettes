@@ -71,10 +71,10 @@ const BlogCard = ({ item }) => {
         <UserIcon />
         <p>{item.author}</p>
       </div>
-      <div className="flex items-center text-xs pb-4 text-gray-500 w-full gap-2">
+     {/*  <div className="flex items-center text-xs pb-4 text-gray-500 w-full gap-2">
         <CalendarIcon />
         <p>{formatDateToDDMMYYYY(item.date)}</p>
-      </div>
+      </div> */}
 
       <Link href={`/blog/${item._id}`}>
         <Button text="En savoir plus" />

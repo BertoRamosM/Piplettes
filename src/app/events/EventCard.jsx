@@ -55,8 +55,7 @@ const EventCard = ({ item }) => {
         alt={shortTitle}
         width={800}
         height={600}
-        zoomIn={true}
-        className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0"
       />
 
       <Link href={`/events/${item._id}`}>
