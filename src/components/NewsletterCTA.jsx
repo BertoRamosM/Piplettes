@@ -32,7 +32,8 @@ const NewsletterCTA = () => {
     }, 100);
   };
 
-  const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
+const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
+
 
   return (
     <div>
@@ -80,7 +81,7 @@ const NewsletterCTA = () => {
                           type="email"
                           name="email"
                           placeholder="Entrer votre Email"
-                          className="p-2 rounded-lg text-black border-2 bg-transparentfocus:ring-greeny-600 outline-none"
+                          className="p-2 rounded-lg text-black border-2 bg-transparent focus:ring-greeny-600 outline-none"
                           required
                         />
                         <button
@@ -92,16 +93,13 @@ const NewsletterCTA = () => {
                       </form>
                       {status === "sending" && <div>Envoi en cours...</div>}
                       {status === "error" && (
-                        <div
-                          dangerouslySetInnerHTML={{ __html: message }}
-                          style={{ color: "red" }}
-                        />
-                      )}
-                      {status === "success" && (
-                        <div className="text-black font-bold mt-1 mr-2">
-                          Merci pour votre inscription!
+                        <div style={{ color: "red" }}>
+                          {message ||
+                            "Une erreur est survenue. Veuillez réessayer plus tard."}
                         </div>
                       )}
+                      {status === "success" && <div className="text-black font-bold mt-1 mr-2">Merci pour votre inscription!</div>}
+                    
                     </div>
                   </div>
                 </div>
