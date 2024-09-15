@@ -38,7 +38,7 @@ const EventCard = ({ item }) => {
       });
 
       if (res.status === 200) {
-        router.push("/events");
+        router.refresh();
       } else {
         console.error("Failed to delete event");
       }
