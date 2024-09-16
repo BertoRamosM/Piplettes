@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import Events from "../../../../models/Events";
 
 export const GET = async (request) => {
+  console.log(request)
   try {
     await connect();
 

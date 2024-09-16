@@ -1,52 +1,45 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import { sendContactForm } from '../../../lib/api'
-import { useRouter } from 'next/navigation'
+import React, { useState } from "react";
+import { sendContactForm } from "../../../lib/api";
+import { useRouter } from "next/navigation";
 
 const initValues = {
   email: "",
   subject: "",
   message: "",
-}
-
-const initState = {
-  values:initValues
-}
+};
 
 const ContactForm = () => {
-  const [state, setState] = useState(initState)
+  const [values, setValues] = useState(initValues);
+  const [error, setError] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const router = useRouter();
 
-  const router = useRouter()
+  const handleChange = ({ target }) => {
+    setValues((prev) => ({
+      ...prev,
+      [target.name]: target.value,
+    }));
+  };
 
-  const { values } = state
-  
-  const handleChange = ({target}) => {
-    setState((prev) => ({
-      ...prev, 
-      values: {
-        ...prev.values,
-        [target.name]: target.value
-      }
-    }))
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
 
- const onSubmit = async (e) => {
-   e.preventDefault();
-   setState((prev) => ({
-     ...prev,
-   }));
-   try {
-     await sendContactForm(values);
-     router.push("/success")
-    
-   } catch (error) {
-    throw new Error(error)
-   }
- };
+    try {
+      await sendContactForm(values);
+      router.push("/success");
+    } catch (err) {
+      setError("Une erreur est survenue. Veuillez réessayer.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
-    <form action="#" className="space-y-8 flex-1 pb-4 sm:pb-0">
+    <form onSubmit={handleSubmit} className="space-y-8 flex-1 pb-4 sm:pb-0">
       <div>
         <label
           htmlFor="email"
@@ -102,20 +95,23 @@ const ContactForm = () => {
         ></textarea>
       </div>
 
+      {error && <div className="text-red-600 font-bold">{error}</div>}
+
       <button
-        onClick={onSubmit}
         type="submit"
         className={`w-max p-2 mt-2 font-bold transition duration-300 ${
           !values.email || !values.subject || !values.message
             ? "border-2 border-zinc-500 text-zinc-500"
             : "bg-transparent border-2 border-orangy-600 text-orangy-600 hover:text-greeny-600 hover:scale-105"
         }`}
-        disabled={!values.email || !values.subject || !values.message}
+        disabled={
+          !values.email || !values.subject || !values.message || isSubmitting
+        }
       >
-        Envoyer le message
+        {isSubmitting ? "Envoi en cours..." : "Envoyer le message"}
       </button>
     </form>
   );
-}
+};
 
-export default ContactForm
+export default ContactForm;
