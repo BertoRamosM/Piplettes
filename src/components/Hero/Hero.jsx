@@ -6,14 +6,16 @@ const Hero = () => {
   return (
     <section className="">
       <div className="container mx-auto flex flex-col px-4 text-pretty md:px-10 lg:px-32 pb-24 jutify-center">
-        <Image src={"/texte.png"} alt="logo" width={200} height={140} />
-      
-        <h2 className="text-xl font-bold leading-none pl-1 pt-2">
-          Explorez,
-          <span className="text-magenta-600"> Découvrez</span>, Débattez
-        </h2>
+        <div className="flex items-end">
+          <Image src={"/texte.png"} alt="logo" width={180} height={140} />
+
+          <h2 className="text-xl font-bold leading-none pl-1 pt-2 pb-2">
+            Explorez,
+            <span className="text-magenta-600"> Découvrez</span>, Débattez
+          </h2>
+        </div>
         <div className="flex flex-col items-center justify-center gap-2 relative">
-          <p className="mt-4 mb-12 text-lg">
+          <p className="mt-2 mb-12 text-lg">
             Situés à Granville (50400), nous, Les Piplettes de Granville, nous
             spécialisons dans les arts et la culture, avec un accent particulier
             sur le cinéma. Engagez-vous dans nos Ciné Débats pour des

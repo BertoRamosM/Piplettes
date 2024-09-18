@@ -61,16 +61,24 @@ const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
                   >
                     X
                   </div>
-                  <div className="flex flex-col justify-between items-center gap-4">
+                  <div className="flex flex-col justify-between items-center gap-6">
                     <div className="flex sm:gap-2 items-center justify-center pt-2 sm:pt-0">
                       <BellIcon />
-                      <h3 className="text-lg font-bold text-white">
-                        S&apos;incrire pour recevoir notre information
-                      </h3>
+                      <div className="flex flex-col gap-2 justify-center">
+                        <h3 className="text-lg font-bold text-white">
+                          S&apos;incrire pour recevoir notre information
+                        </h3>
+                        <p className="text-xs">
+                          J&apos;accepte que mon adresse mail soit recueillie et
+                          utilisée dans le cadre d&apos;envoi
+                          d&apos;informations, et que mon consentement soit
+                          enregistré.
+                        </p>
+                      </div>
                     </div>
                     <div>
                       <form
-                        className="flex gap-2 items-center justify-center"
+                        className="flex gap-2"
                         onSubmit={(e) => {
                           e.preventDefault();
                           const formData = new FormData(e.target);
@@ -81,16 +89,17 @@ const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
                           type="email"
                           name="email"
                           placeholder="Entrer votre Email"
-                          className="p-2 rounded-lg text-black border-2 bg-transparent focus:ring-greeny-600 outline-none"
+                          className="p-3 rounded-lg text-gray-800 border-2 bg-white focus:outline-none focus:ring-2 focus:ring-greeny-600 focus:border-transparent transition duration-300 ease-in-out w-fit"
                           required
                         />
                         <button
                           type="submit"
-                          className="bg-transparent border-2 border-greeny-600 text-white w-max p-2 hover:text-orangy-600 font-bold transition duration-300 hover:scale-105"
+                          className="bg-transparent border-2 text-white w-max p-2 font-bold transition duration-300 hover:scale-105"
                         >
                           S`abonner
                         </button>
                       </form>
+
                       {status === "sending" && <div>Envoi en cours...</div>}
                       {status === "error" && (
                         <div style={{ color: "red" }}>
@@ -98,8 +107,11 @@ const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
                             "Une erreur est survenue. Veuillez réessayer plus tard."}
                         </div>
                       )}
-                      {status === "success" && <div className="text-black font-bold mt-1 mr-2">Merci pour votre inscription!</div>}
-                    
+                      {status === "success" && (
+                        <div className="text-black font-bold mt-1 mr-2">
+                          Merci pour votre inscription!
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

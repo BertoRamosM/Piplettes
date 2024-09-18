@@ -69,7 +69,7 @@ const EventPage = async ({ params }) => {
     <div className="">
       <UpdateButton eventId={movie._id} />
       <Link
-        className="flex gap-2 items-center hover:text-magenta-600 pb-8 sm:pb-0"
+        className="flex gap-2 items-center hover:text-magenta-600 pb-8 sm:pb-0 transition"
         href="/events"
       >
         <BackArrow />
@@ -126,7 +126,7 @@ const EventPage = async ({ params }) => {
         {prevMovie ? (
           <Link
             href={`/events/${prevMovie._id}`}
-            className="flex items-center justify-center hover:text-magenta-600 absolute right-0"
+            className="flex items-center justify-center hover:text-magenta-600 absolute right-0 transition"
           >
             Archive suivante
             <ChevronRight />
@@ -136,7 +136,7 @@ const EventPage = async ({ params }) => {
         {nextMovie ? (
           <Link
             href={`/events/${nextMovie._id}`}
-            className="flex items-center justify-center hover:text-magenta-600 absolute left-0"
+            className="flex items-center justify-center hover:text-magenta-600 absolute left-0 transition"
           >
             <ChevronLeft />
             Archive précédente

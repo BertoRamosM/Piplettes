@@ -4,10 +4,6 @@ import { Link } from "next-view-transitions";
 import BackArrow from "../../../components/icons/BackArrow";
 import { notFound } from "next/navigation";
 
-const formatDate = (dateString) => {
-  const date = new Date(dateString);
-  return new Intl.DateTimeFormat("en-GB").format(date);
-};
 
 export async function generateMetadata({ params }) {
   const blog = await getBlogData(params._id);
@@ -44,7 +40,7 @@ const BlogPage = async ({ params }) => {
   return (
     <div className="">
       <Link
-        className="flex gap-2 items-center hover:text-magenta-600 pb-16"
+        className="flex gap-2 items-center hover:text-magenta-600 pb-16 transition"
         href="/blog"
       >
         <BackArrow />
@@ -55,7 +51,6 @@ const BlogPage = async ({ params }) => {
           <h1 className="sm:text-5xl font-semibold">{blog.title}</h1>
           <h3 className="text-sm sm:text-xl">
             {blog.author},{" "}
-            <span className="text-sm">{formatDate(blog.date)}</span>
           </h3>
 
           <div className="flex gap-2 flex-wrap">
