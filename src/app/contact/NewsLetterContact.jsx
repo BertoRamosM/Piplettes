@@ -19,7 +19,7 @@ const NewsLetterContact = () => {
       render={({ subscribe, status, message }) => (
         <div className="relative p-4 bg-transparemt rounded-lg text-zinc-800 py-16 max-w-xs">
           <div className="flex flex-col justify-between items-center gap-4">
-            <div className="flex sm:gap-2 items-center justify-center pt-2 sm:pt-0">
+            <div className="flex sm:gap-2 items-center justify-center pt-2 sm:pt-0 gap-4">
               <BellIcon />
               <h3 className="text-lg font-bold">
                 S&apos;incrire pour recevoir notre information
