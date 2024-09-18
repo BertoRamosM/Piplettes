@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
 
 async function getDataWithNavigation(id) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/events`, {
-    cache: "no-cache",
+    next: { revalidate: 700 },
   });
   if (!res.ok) {
     return notFound();
