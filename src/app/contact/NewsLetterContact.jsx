@@ -17,7 +17,7 @@ const NewsLetterContact = () => {
     <MailchimpSubscribe
       url={MAILCHIMP_URL}
       render={({ subscribe, status, message }) => (
-        <div className="relative p-4 bg-transparemt rounded-lg text-zinc-800 py-16">
+        <div className="relative p-4 bg-transparemt rounded-lg text-zinc-800 py-16 max-w-sm">
           <div className="flex flex-col justify-between items-center gap-4">
             <div className="flex sm:gap-2 items-center justify-center pt-2 sm:pt-0">
               <BellIcon />
@@ -48,6 +48,13 @@ const NewsLetterContact = () => {
                   S&apos;abonner
                 </button>
               </form>
+              <p className="text-xs w-full pt-1 justify-center text-pretty">
+                <span>
+                  J&apos;accepte que mon adresse mail soit recueillie et
+                </span>
+                utilisée dans le cadre d&apos;envoi d&apos;informations,
+                <span>et que mon consentement soit enregistré.</span>
+              </p>
               {status === "sending" && <div>Envoi en cours...</div>}
               {status === "error" && (
                 <div
