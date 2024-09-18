@@ -33,7 +33,7 @@ const EventsPage = async () => {
       `${
         process.env.NEXT_PUBLIC_BASE_URL
       }/api/events`, {
-      next: { revalidate: 300 },
+      next: { revalidate: 700 },
     });
     if (!res.ok) {
       throw new Error("Failed to fetch events");
