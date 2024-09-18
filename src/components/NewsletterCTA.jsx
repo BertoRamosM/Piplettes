@@ -39,7 +39,7 @@ const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
     <div>
       {isVisible || isAnimating ? (
         <div
-          className={`fixed pt-4 sm:pt-8 bottom-4 right-2 left-2 w-auto z-40 bg-magenta-600 text-xs sm:text-base text-white p-2 sm:p-4 shadow-xl rounded-md transition-transform duration-500 ease-in-out max-w-md transform ${
+          className={`fixed pt-4 sm:pt-8 bottom-4 right-2 left-2 sm:left-auto w-auto z-40 bg-magenta-600 text-xs sm:text-base text-white p-2 sm:p-4 shadow-xl rounded-md transition-transform duration-500 ease-in-out max-w-md transform ${
             isVisible
               ? isAnimating
                 ? "animate-slide-out-right"
