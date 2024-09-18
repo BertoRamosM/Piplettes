@@ -1,7 +1,7 @@
-'use client'
+"use client";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import BellIcon from "../../components/icons/BellIcon";
- 
+import AlertIcon from "../../components/icons/AlertIcon";
 
 const NewsLetterContact = () => {
   const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
@@ -17,7 +17,7 @@ const NewsLetterContact = () => {
     <MailchimpSubscribe
       url={MAILCHIMP_URL}
       render={({ subscribe, status, message }) => (
-        <div className="relative p-4 bg-transparemt rounded-lg text-zinc-800 py-16 max-w-sm">
+        <div className="relative p-4 bg-transparemt rounded-lg text-zinc-800 py-16 max-w-xs">
           <div className="flex flex-col justify-between items-center gap-4">
             <div className="flex sm:gap-2 items-center justify-center pt-2 sm:pt-0">
               <BellIcon />
@@ -43,17 +43,16 @@ const NewsLetterContact = () => {
                 />
                 <button
                   type="submit"
-                  className="bg-transparent border-2 border-greeny-600 w-max p-2 hover:text-orangy-600 hover:border-orangy-600 font-bold transition duration-300 hover:scale-105"
+                 className="bg-transparent border-2 border-orangy-600 text-orangy-600 w-max p-2 hover:text-greeny-600 transition duration-300 hover:scale-105 hover:border-greeny-600 cursor-pointer flex items-center justify-center font-semibold"
                 >
                   S&apos;abonner
                 </button>
               </form>
-              <p className="text-xs w-full pt-1 justify-center text-pretty">
-                <span>
-                  J&apos;accepte que mon adresse mail soit recueillie et
-                </span>
-                utilisée dans le cadre d&apos;envoi d&apos;informations,
-                <span>et que mon consentement soit enregistré.</span>
+              <p className="text-xs w-full pt-1 justify-center text-pretty flex items-center">
+             
+                J&apos;accepte que mon adresse mail soit recueillie et utilisée
+                dans le cadre d&apos;envoi d&apos;informations, et que mon
+                consentement soit enregistré.
               </p>
               {status === "sending" && <div>Envoi en cours...</div>}
               {status === "error" && (
