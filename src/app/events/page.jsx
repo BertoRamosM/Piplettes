@@ -32,11 +32,9 @@ const EventsPage = async () => {
     const res = await fetch(
       `${
         process.env.NEXT_PUBLIC_BASE_URL
-      }/api/events?_=${new Date().getTime()}`,
-      {
-        cache: "no-store",
-      }
-    );
+      }/api/events`, {
+      next: { revalidate: 300 },
+    });
     if (!res.ok) {
       throw new Error("Failed to fetch events");
     }

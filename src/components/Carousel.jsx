@@ -47,7 +47,9 @@ const Carousel = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const res = await fetch("/api/events/upcoming", {cache: "no-store"});
+        const res = await fetch("/api/events/upcoming", {
+          next: { revalidate: 300 },
+        });
         if (!res.ok) {
           throw new Error(`Error: ${res.status} ${res.statusText}`);
         }
