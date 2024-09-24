@@ -48,7 +48,8 @@ const Carousel = () => {
     const fetchEvents = async () => {
       try {
         const res = await fetch("/api/events/upcoming", {
-          next: { revalidate: 700 },
+          /* next: { revalidate: 700 }, */
+           cache: 'no-store' 
         });
         if (!res.ok) {
           throw new Error(`Error: ${res.status} ${res.statusText}`);
