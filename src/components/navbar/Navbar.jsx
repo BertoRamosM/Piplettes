@@ -75,7 +75,7 @@ const Navbar = () => {
             }`}
             aria-label="View upcoming events"
           >
-            Nos prochains événements
+            Prochains événements
           </Link>
           <Link
             href="/events"

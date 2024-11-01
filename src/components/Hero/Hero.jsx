@@ -10,17 +10,22 @@ const Hero = () => {
           <Image src={"/texte.png"} alt="logo" width={180} height={140} />
 
           <h2 className="text-xl font-bold leading-none pl-1 pt-2 pb-2">
-            Explorez,
-            <span className="text-magenta-600"> Découvrez</span>, Débattez
+          Informer -
+            <span className="text-magenta-600"> Débattre</span>- Réfléchir
           </h2>
         </div>
-        <div className="flex flex-col items-center justify-center gap-2 relative">
-          <p className="mt-2 mb-12 text-lg">
-            Situés à Granville (50400), nous, Les Piplettes de Granville, nous
-            spécialisons dans les arts et la culture, avec un accent particulier
-            sur le cinéma. Engagez-vous dans nos Ciné Débats pour des
-            discussions enrichissantes et stimulantes après chaque projection.
+        <div className="flex flex-col justify-center gap-2 relative mt-8">
+          <h3 className="text-lg">Pourquoi les <span className="text-magenta-600">Piplettes</span> ?</h3>
+          <p className=" mb-4 text-md">
+          Parce qu’elles aiment bien débattre sur les questions de société qui impactent nos
+vies et celles des générations futures.
           </p>
+          <h3 className="text-lg">Que font-elles ?</h3>
+          <p className=" text-md">
+          Non, non, les <span className="text-magenta-600">Piplettes</span> ne passent pas leur temps qu’à discuter ou boire du café ;
+          elles organisent aussi des ciné-rencontres et même des conférences… <Link href={"/about"} className="text-magenta-600 hover:text-greeny-500 transition-all duration-300">en savoir +</Link>
+          </p>
+
           <div className="flex items-center justify-between w-full flex-col sm:flex-row">
             <div className="relative w-64  h-64 mb-4">
               <Image
