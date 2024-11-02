@@ -33,7 +33,6 @@ const EventsPage = async () => {
       `${
         process.env.NEXT_PUBLIC_BASE_URL
       }/api/events`, {
-        /* next: { revalidate: 700 }, */
          cache: 'no-store' 
     });
     if (!res.ok) {
@@ -51,10 +50,10 @@ const EventsPage = async () => {
       <Scroll />
       <div className="flex gap-4 h-auto items-center pb-2">
         <ArchiveIcon />
-        <h1 className="text-2xl font-bold text-left">Nos archives</h1>
+        <h1 className="text-2xl font-bold text-left">Archives</h1>
       </div>
       <h2 className="pb-12 text-magenta-600 font-bold text-pretty">
-        Elles sont classées par ordre chronologique. <br></br>Vous pouvez effectuer des
+        Elles sont classées par ordre chronologique, du plus récent au plus ancien. <br></br>Vous pouvez effectuer des
         recherches sur un évènement en particulier, par titre ou par thème.
       </h2>
 

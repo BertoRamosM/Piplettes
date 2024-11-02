@@ -1,30 +1,26 @@
 import { NextResponse } from "next/server";
 import connect from "../../../utils/db";
-import Events from "../../../models/Events.js";
+import Events from "../../../models/Events";
 
-
-export const GET = async (request) => {
-  console.log(request);
+export async function GET() {
   try {
     await connect();
+    console.log("Connected to MongoDB in API route");
 
-    // Fetch and sort events
     const events = await Events.find().sort({ date: 1 });
-    console.log("Fetched events:", events);
+    console.log("Fetched events from database:", events);
 
-    // Return response with no-cache headers to prevent caching
-    return new NextResponse(JSON.stringify(events), {
-      status: 200,
-      headers: {
-        "Cache-Control": "no-store", // Ensure no caching
-        "Content-Type": "application/json", // Specify content type
-      },
-    });
+    if (events.length === 0) {
+      console.warn("No events found in MongoDB collection.");
+    }
+
+    return NextResponse.json(events);
   } catch (error) {
-    console.error("Error fetching events:", error.stack); // Log the full error stack
+    console.error("Error fetching events:", error);
     return new NextResponse("Database error!", { status: 500 });
   }
-};
+}
+
 
 export const POST = async (request) => {
   try {
