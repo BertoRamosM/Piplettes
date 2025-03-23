@@ -11,6 +11,7 @@ const initValues = {
 };
 
 const ContactForm = () => {
+  const [status, setStatus] = useState(null);
   const [values, setValues] = useState(initValues);
   const [error, setError] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
