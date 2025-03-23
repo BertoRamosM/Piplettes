@@ -23,25 +23,42 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError(null);
-
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
     try {
-      await sendContactForm(values);
-      router.push("/success");
-    } catch (err) {
-      setError("Une erreur est survenue. Veuillez réessayer.");
-    } finally {
-      setIsSubmitting(false);
+      setStatus('pending');
+      setError(null);
+      const form = event.target;
+      const formData = new FormData(form);
+      // Update the fetch URL to point to __forms.html in the public folder
+      const res = await fetch('/__forms.html', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString(),
+      });
+      if (res.ok) {
+        setStatus('ok');
+        form.reset(); // Clear the form inputs
+      } else {
+        throw new Error(`Error: ${res.status} ${res.statusText}`);
+      }
+    } catch (e) {
+      setStatus('error');
+      setError(e.message);
     }
   };
 
   return (
 /*     <form onSubmit={handleSubmit} className="space-y-8 flex-1 pb-4 sm:pb-0">
  */     
-<form name="contact" netlify className="space-y-8 flex-1 pb-4 sm:pb-0"> <div>
+<form
+          className="space-y-6"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          onSubmit={handleFormSubmit}
+        >
+   <div>
         <label
           htmlFor="email"
           className="block mb-2 text-sm font-bold text-black"
