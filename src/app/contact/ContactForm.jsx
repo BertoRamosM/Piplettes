@@ -39,8 +39,9 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8 flex-1 pb-4 sm:pb-0">
-      <div>
+/*     <form onSubmit={handleSubmit} className="space-y-8 flex-1 pb-4 sm:pb-0">
+ */     
+<form name="contact" netlify className="space-y-8 flex-1 pb-4 sm:pb-0"> <div>
         <label
           htmlFor="email"
           className="block mb-2 text-sm font-bold text-black"
