@@ -50,16 +50,16 @@ const ContactForm = () => {
   };
 
   return (
-/*     <form onSubmit={handleSubmit} className="space-y-8 flex-1 pb-4 sm:pb-0">
- */     
-<form
-          className="space-y-6"
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          onSubmit={handleFormSubmit}
-        >
-   <div>
+    /*     <form onSubmit={handleSubmit} className="space-y-8 flex-1 pb-4 sm:pb-0">
+     */
+    <form
+      className="space-y-8 flex-1 pb-4 sm:pb-0"
+      name="contact"
+      method="POST"
+      data-netlify="true"
+    
+    >
+      <div>
         <label
           htmlFor="email"
           className="block mb-2 text-sm font-bold text-black"
@@ -118,11 +118,10 @@ const ContactForm = () => {
 
       <button
         type="submit"
-        className={`w-max p-2 mt-2 font-bold transition duration-300 ${
-          !values.email || !values.subject || !values.message
+        className={`w-max p-2 mt-2 font-bold transition duration-300 ${!values.email || !values.subject || !values.message
             ? "border-2 border-zinc-500 text-zinc-500"
             : "bg-transparent border-2 border-orangy-600 text-orangy-600 hover:text-greeny-600 hover:scale-105"
-        }`}
+          }`}
         disabled={
           !values.email || !values.subject || !values.message || isSubmitting
         }
