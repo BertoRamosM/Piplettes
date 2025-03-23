@@ -10,5 +10,5 @@ export const transporter = nodemailer.createTransport({
 
 export const mailOptions = {
   from: process.env.EMAIL_USER, // Your email
-  to: "@example.com", // Change this to the actual recipient
+  to: "albertramos902@example.com", // Change this to the actual recipient
 };
