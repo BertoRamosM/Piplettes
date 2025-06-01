@@ -33,14 +33,14 @@ export async function POST(req) {
     });
   }
 
-  const emailContent = generateEmailContent(data); 
+  const emailContent = generateEmailContent(data);
 
   try {
     await transporter.sendMail({
       ...mailOptions,
       subject: data.subject,
-      text: emailContent.text, 
-      html: emailContent.html, 
+      text: emailContent.text,
+      html: emailContent.html,
     });
 
     return new Response(
