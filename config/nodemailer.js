@@ -1,14 +1,17 @@
 import nodemailer from "nodemailer";
 
+const email = process.env.EMAIL;
+const pass = process.env.EMAIL_PASS;
+
 export const transporter = nodemailer.createTransport({
-  service: "gmail", // or another email provider (e.g., "hotmail", "outlook")
+  service: "gmail",
   auth: {
-    user: process.env.EMAIL_USER, // Ensure this is set
-    pass: process.env.EMAIL_PASS, // Ensure this is set
+    user: email,
+    pass: pass,
   },
 });
 
 export const mailOptions = {
-  from: process.env.EMAIL_USER, // Your email
-  to: "albertramos902@example.com", // Change this to the actual recipient
+  from: email,
+  to: email,
 };

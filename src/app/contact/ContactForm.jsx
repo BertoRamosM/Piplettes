@@ -11,8 +11,8 @@ const initValues = {
 };
 
 const ContactForm = () => {
-  const [status, setStatus] = useState(null);
   const [values, setValues] = useState(initValues);
+  const [status, setStatus] = useState(null);
   const [error, setError] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
@@ -50,15 +50,14 @@ const ContactForm = () => {
   };
 
   return (
-    /*     <form onSubmit={handleSubmit} className="space-y-8 flex-1 pb-4 sm:pb-0">
-     */
     <form
       className="space-y-8 flex-1 pb-4 sm:pb-0"
       name="contact"
       method="POST"
       data-netlify="true"
-    
+      onSubmit={handleFormSubmit}
     >
+      <input type="hidden" name="form-name" value="contact" />
       <div>
         <label
           htmlFor="email"

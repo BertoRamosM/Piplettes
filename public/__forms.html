@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Netlify Forms Handler</title>
-  </head>
-  <body>
-    <!-- Form for Netlify -->
-    <form name="contact" data-netlify="true" method="POST" hidden>
-      <input type="email" name="email" required />
-      <input type="text" name="subject" required/>
-      <textarea name="message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netlify Forms Handler</title>
+</head>
+
+<body>
+  <!-- Form for Netlify -->
+  <form name="contact" data-netlify="true" method="POST" hidden>
+    <input type="hidden" name="form-name" value="contact" />
+    <input type="email" name="email" required />
+    <input type="text" name="subject" required />
+    <textarea type="text" name="message" required> </textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</body>
+
 </html>
