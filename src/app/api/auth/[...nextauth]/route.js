@@ -1,16 +1,11 @@
 import connect from "../../../../utils/db.js";
 import Users from "../../../../models/Users.js";
 import NextAuth from "next-auth/next";
-import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 
 const handler = NextAuth({
   providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    }),
     CredentialsProvider({
       id: "credentials",
       name: "Credentials",
@@ -45,9 +40,9 @@ const handler = NextAuth({
     }),
   ],
   pages: {
-    error: "/events", //error page redirect
+    error: "/events", // error page redirect
   },
-  debug: true, 
+  debug: true,
 });
 
 export { handler as GET, handler as POST };
