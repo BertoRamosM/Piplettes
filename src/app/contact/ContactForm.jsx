@@ -31,7 +31,6 @@ const ContactForm = () => {
       setError(null);
       const form = event.target;
       const formData = new FormData(form);
-      // Update the fetch URL to point to __forms.html in the public folder
       const res = await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -39,7 +38,7 @@ const ContactForm = () => {
       });
       if (res.ok) {
         setStatus('ok');
-        form.reset(); // Clear the form inputs
+        form.reset(); 
       } else {
         throw new Error(`Error: ${res.status} ${res.statusText}`);
       }

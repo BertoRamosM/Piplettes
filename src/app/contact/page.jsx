@@ -33,7 +33,7 @@ const Contact = () => {
 
         <div className="flex flex-col items-start justify-start text-left">
           <ContactInfo />
-          <NewsLetterContact />
+         {/*  <NewsLetterContact /> */}
         </div>
       </div>
     </div>
