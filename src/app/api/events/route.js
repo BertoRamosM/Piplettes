@@ -44,6 +44,7 @@ export const POST = async (request) => {
       month: body.month || "",
       themes: body.themes || [],
       release: body.release,
+      plus: body.plus || "",
     });
 
     await newEvent.save();

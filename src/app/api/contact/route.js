@@ -22,43 +22,39 @@ const generateEmailContent = (data) => {
 };
 
 export async function POST(req) {
-  const data = await req.json();
-
-  if (!data.email || !data.subject || !data.message) {
-    return new Response(JSON.stringify({ message: "Bad request" }), {
-      status: 400,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-  }
-
-  const emailContent = generateEmailContent(data); 
-
   try {
+    const data = await req.json();
+    console.log("Received data:", data);
+
+    if (!data.email || !data.subject || !data.message) {
+      console.error("Validation error:", data);
+      return new Response(JSON.stringify({ message: "Bad request" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
+    const emailContent = generateEmailContent(data);
+    console.log("Email content generated");
+
     await transporter.sendMail({
       ...mailOptions,
       subject: data.subject,
-      text: emailContent.text, 
-      html: emailContent.html, 
+      text: emailContent.text,
+      html: emailContent.html,
     });
 
-    return new Response(
-      JSON.stringify({ message: "Form submitted successfully" }),
-      {
-        status: 200,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    console.log("Email sent successfully");
+    return new Response(JSON.stringify({ message: "Form submitted successfully" }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+
   } catch (error) {
-    console.error("Error processing contact form:", error);
-    return new Response(JSON.stringify({ error: "Failed to submit form" }), {
+    console.error("API Route Error:", error);
+    return new Response(JSON.stringify({ error: error.message || "Failed to submit form" }), {
       status: 500,
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
     });
   }
 }

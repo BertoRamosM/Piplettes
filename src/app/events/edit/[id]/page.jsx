@@ -21,6 +21,7 @@ const EditEvent = ({ params }) => {
     date: "",
     hour: "",
     themes: "",
+    plus: "",
   });
 
   useEffect(() => {
@@ -57,6 +58,7 @@ const EditEvent = ({ params }) => {
               themes: event.current.themes
                 ? event.current.themes.join(",")
                 : "",
+                plus: event.current.plus || "",
             });
             setLoading(false);
           } else {
@@ -100,6 +102,7 @@ const EditEvent = ({ params }) => {
       day,
       hour,
       month,
+      plus,
     } = formValues;
     const themes = formValues.themes.split(",");
 
@@ -121,6 +124,7 @@ const EditEvent = ({ params }) => {
           month,
           themes,
           release,
+          plus,
         }),
       });
 
@@ -140,6 +144,7 @@ const EditEvent = ({ params }) => {
     formValues.synopsis.trim() &&
     formValues.image.trim() &&
     formValues.release.trim();
+    formValues.plus.trim();
 
   if (loading) return <Loader />;
 
@@ -278,6 +283,19 @@ const EditEvent = ({ params }) => {
             name="themes"
             value={formValues.themes}
             placeholder="Enter themes (comma-separated)"
+            className="bg-transparent border-2 border-zinc-500 p-2 w-full"
+            onChange={handleInputChange}
+          />
+        </label>
+
+      
+         <label className="w-full">
+          Aller plus loin:
+          <input
+            type="text"
+            name="plus"
+            value={formValues.plus}
+            placeholder="Enter link to download pdf. if field not empty will display button to download pdf"
             className="bg-transparent border-2 border-zinc-500 p-2 w-full"
             onChange={handleInputChange}
           />

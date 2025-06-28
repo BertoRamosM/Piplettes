@@ -18,6 +18,7 @@ const AddEvent = () => {
     day: "",
     month: "",
     themes: "",
+    plus: "",
   });
 
   const handleInputChange = (e) => {
@@ -51,6 +52,7 @@ const AddEvent = () => {
       day,
       month,
       themes,
+      plus,
     } = formValues;
 
     const themesArray = themes ? themes.split(",") : [];
@@ -73,6 +75,7 @@ const AddEvent = () => {
           month,
           themes: themesArray,
           release,
+          plus: plus || undefined,
         }),
       });
 
@@ -91,7 +94,8 @@ const AddEvent = () => {
       formValues.desc.trim() &&
       formValues.synopsis.trim() &&
       formValues.image.trim() &&
-      formValues.release.trim()
+      formValues.release.trim() &&
+      formsValues.plus.trim()
     );
   };
 
@@ -205,6 +209,16 @@ const AddEvent = () => {
             type="text"
             placeholder="Thèmes (séparés par des virgules, sans espace)"
             name="themes"
+            className="bg-transparent border-2 border-zinc-500 p-2 w-full"
+            onChange={handleInputChange}
+          />
+        </label>
+         <label className="w-full">
+          Aller plus loin
+          <input
+            type="text"
+            placeholder="Add URL to download pdf. if field not empty will display button to download pdf"
+            name="plus"
             className="bg-transparent border-2 border-zinc-500 p-2 w-full"
             onChange={handleInputChange}
           />

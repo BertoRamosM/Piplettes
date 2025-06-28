@@ -44,6 +44,7 @@ const Footer = () => {
         <Link href="/contact" className="hover:text-greeny-600 sm:px-6 px-2">
           Contact
         </Link>
+        
       </div>
     </div>
   );
