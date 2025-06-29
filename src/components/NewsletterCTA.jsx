@@ -5,6 +5,9 @@ import BellIcon from "./icons/BellIcon";
 const MailchimpFormWithToggle = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isEmailValid, setIsEmailValid] = useState(false);
 
   useEffect(() => {
     // Load Mailchimp validation script on mount
@@ -40,6 +43,20 @@ const MailchimpFormWithToggle = () => {
     }, 100);
   };
 
+  const handleSuccess = () => {
+    setSuccess(true);
+    setTimeout(() => {
+      setSuccess(false);
+      handleClose();
+    }, 12000);
+   
+  };
+
+  const validateEmail = (value) => {
+    const isValid = /\S+@\S+\.\S+/.test(value);
+    setIsEmailValid(isValid);
+  };
+
   return (
     <div>
       {(isVisible || isAnimating) ? (
@@ -65,7 +82,7 @@ const MailchimpFormWithToggle = () => {
             >
               <div className="flex justify-between items-center">
                 <h2 className="text-lg font-semibold text-gray-900">
-                  S&apos;inscrire pour recevoir notre information
+                  S'inscrire pour recevoir notre information
                 </h2>
                 <button
                   type="button"
@@ -85,6 +102,12 @@ const MailchimpFormWithToggle = () => {
                 name="EMAIL"
                 id="mce-EMAIL"
                 required
+                value={email}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  setEmail(value);
+                  validateEmail(value);
+                }}
                 className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-greeny-600 focus:border-greeny-600 transition"
                 placeholder="Entrer votre Email"
               />
@@ -101,16 +124,30 @@ const MailchimpFormWithToggle = () => {
               </div>
 
               <button
+                onClick={handleSuccess}
                 type="submit"
                 name="subscribe"
                 id="mc-embedded-subscribe"
-                className="bg-magenta-600 hover:bg-magenta-700 text-white font-semibold py-3 rounded-lg transition-colors duration-300"
+                disabled={!isEmailValid}
+                className={`font-semibold py-3 rounded-lg transition-colors duration-300 ${
+                  isEmailValid
+                    ? "bg-magenta-600 hover:bg-magenta-700 text-white"
+                    : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                }`}
               >
-                S&apos;abonner
+                S'abonner
               </button>
 
+              {success && (
+                <p className="text-green-500 font-bold">
+                  ✅ Merci pour votre inscription !
+                </p>
+              )}
+
               <p className="text-xs text-gray-600">
-                J&apos;accepte que mon adresse mail soit recueillie et utilisée dans le cadre d&apos;envoi d&apos;informations, et que mon consentement soit enregistré.
+                J&apos;accepte que mon adresse mail soit recueillie et utilisée
+                dans le cadre d&apos;envoi d&apos;informations, et que mon
+                consentement soit enregistré.
               </p>
             </form>
           ) : (
@@ -120,7 +157,9 @@ const MailchimpFormWithToggle = () => {
               role="button"
               tabIndex={0}
               aria-label="Open newsletter signup form"
-              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") handleOpen(); }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") handleOpen();
+              }}
             >
               <BellIcon />
             </div>
@@ -133,7 +172,9 @@ const MailchimpFormWithToggle = () => {
           role="button"
           tabIndex={0}
           aria-label="Open newsletter signup form"
-          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") handleOpen(); }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") handleOpen();
+          }}
         >
           <BellIcon />
           <span className="animate-ping absolute top-1 right-0.5 block h-1 w-1 rounded-full ring-2 ring-greeny-600 bg-greeny-600"></span>
