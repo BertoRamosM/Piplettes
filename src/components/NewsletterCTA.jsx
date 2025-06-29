@@ -7,13 +7,11 @@ const MailchimpFormWithToggle = () => {
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-    // Load Mailchimp validation script on mount
     const script = document.createElement("script");
     script.src = "//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js";
     script.async = true;
     document.body.appendChild(script);
 
-    // Load visibility state from localStorage
     const storedVisibility = localStorage.getItem("newsletterCTAVisible");
     if (storedVisibility === "false") setIsVisible(false);
 
@@ -65,7 +63,7 @@ const MailchimpFormWithToggle = () => {
             >
               <div className="flex justify-between items-center">
                 <h2 className="text-lg font-semibold text-gray-900">
-                  S'inscrire pour recevoir notre information
+                  S&apos;inscrire pour recevoir notre information
                 </h2>
                 <button
                   type="button"
@@ -106,7 +104,7 @@ const MailchimpFormWithToggle = () => {
                 id="mc-embedded-subscribe"
                 className="bg-magenta-600 hover:bg-magenta-700 text-white font-semibold py-3 rounded-lg transition-colors duration-300"
               >
-                S'abonner
+                S&apos;abonner
               </button>
 
               <p className="text-xs text-gray-600">
