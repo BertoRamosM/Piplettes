@@ -5,6 +5,7 @@ import BellIcon from "./icons/BellIcon";
 const MailchimpFormWithToggle = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [submitted, setSubmitted] = useState(false); // track if form submitted
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -26,6 +27,7 @@ const MailchimpFormWithToggle = () => {
       setIsVisible(false);
       localStorage.setItem("newsletterCTAVisible", "false");
       setIsAnimating(false);
+      setSubmitted(false); // reset on close
     }, 100);
   };
 
@@ -35,7 +37,14 @@ const MailchimpFormWithToggle = () => {
       setIsVisible(true);
       localStorage.setItem("newsletterCTAVisible", "true");
       setIsAnimating(false);
+      setSubmitted(false); // reset on open
     }, 100);
+  };
+
+  // On submit: prevent default, mark as submitted to swap form with thank you message
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
   };
 
   return (
@@ -51,7 +60,22 @@ const MailchimpFormWithToggle = () => {
           role="region"
           aria-label="Newsletter signup form"
         >
-          {isVisible ? (
+          {submitted ? (
+            <div
+              className="text-center font-semibold text-green-700 text-lg"
+              role="alert"
+              aria-live="polite"
+            >
+              Merci pour votre inscription ! 🎉
+              <button
+                type="button"
+                onClick={handleClose}
+                className="mt-4 text-sm text-gray-600 underline"
+              >
+                Fermer
+              </button>
+            </div>
+          ) : (
             <form
               action="https://piplettes-granville.us11.list-manage.com/subscribe/post?u=4259d8a7dae521c25a028aa24&amp;id=d895eecf26&amp;f_id=003ff2e1f0"
               method="post"
@@ -60,6 +84,7 @@ const MailchimpFormWithToggle = () => {
               className="flex flex-col gap-4"
               target="_blank"
               noValidate
+              onSubmit={handleSubmit}
             >
               <div className="flex justify-between items-center">
                 <h2 className="text-lg font-semibold text-gray-900">
@@ -87,7 +112,6 @@ const MailchimpFormWithToggle = () => {
                 placeholder="Entrer votre Email"
               />
 
-              {/* Hidden anti-bot field */}
               <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true">
                 <input
                   type="text"
@@ -111,17 +135,6 @@ const MailchimpFormWithToggle = () => {
                 J&apos;accepte que mon adresse mail soit recueillie et utilisée dans le cadre d&apos;envoi d&apos;informations, et que mon consentement soit enregistré.
               </p>
             </form>
-          ) : (
-            <div
-              className="flex items-center justify-center cursor-pointer p-4 text-magenta-600 hover:text-magenta-800"
-              onClick={handleOpen}
-              role="button"
-              tabIndex={0}
-              aria-label="Open newsletter signup form"
-              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") handleOpen(); }}
-            >
-              <BellIcon />
-            </div>
           )}
         </div>
       ) : (
