@@ -82,7 +82,7 @@ const MailchimpFormWithToggle = () => {
             >
               <div className="flex justify-between items-center">
                 <h2 className="text-lg font-semibold text-gray-900">
-                  S'inscrire pour recevoir notre information
+                  S&apos;inscrire pour recevoir notre information
                 </h2>
                 <button
                   type="button"
@@ -135,7 +135,7 @@ const MailchimpFormWithToggle = () => {
                     : "bg-gray-300 text-gray-500 cursor-not-allowed"
                 }`}
               >
-                S'abonner
+                S&apos;abonner
               </button>
 
               {success && (
