@@ -1,17 +1,25 @@
 "use client";
 import { useState, useEffect } from "react";
 import BellIcon from "./icons/BellIcon";
-import MailchimpSubscribe from "react-mailchimp-subscribe";
 
-const NewsletterCTA = () => {
+const MailchimpFormWithToggle = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
+    // Load Mailchimp validation script on mount
+    const script = document.createElement("script");
+    script.src = "//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    // Load visibility state from localStorage
     const storedVisibility = localStorage.getItem("newsletterCTAVisible");
-    if (storedVisibility === "false") {
-      setIsVisible(false);
-    }
+    if (storedVisibility === "false") setIsVisible(false);
+
+    return () => {
+      document.body.removeChild(script);
+    };
   }, []);
 
   const handleClose = () => {
@@ -32,94 +40,87 @@ const NewsletterCTA = () => {
     }, 100);
   };
 
-const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
-
-
   return (
     <div>
-      {isVisible || isAnimating ? (
+      {(isVisible || isAnimating) ? (
         <div
-          className={`fixed pt-4 sm:pt-8 bottom-4 right-2 left-2 sm:left-auto w-auto z-40 bg-magenta-600 text-xs sm:text-base text-white p-2 sm:p-4 shadow-xl rounded-md transition-transform duration-500 ease-in-out max-w-md transform ${
-            isVisible
-              ? isAnimating
-                ? "animate-slide-out-right"
-                : "animate-slide-in-right"
-              : "animate-slide-out-right"
-          }`}
+          className={`fixed bottom-4 right-2 left-2 sm:left-auto z-40 max-w-md w-full bg-white rounded-lg shadow-lg p-6 text-gray-900 transition-transform duration-500 ease-in-out
+            ${isVisible ? (isAnimating ? "animate-slide-out-right" : "animate-slide-in-right") : "animate-slide-out-right"}
+          `}
           onAnimationEnd={() => {
             if (!isVisible) setIsAnimating(false);
           }}
+          role="region"
+          aria-label="Newsletter signup form"
         >
           {isVisible ? (
-            <MailchimpSubscribe
-              url={MAILCHIMP_URL}
-              render={({ subscribe, status, message }) => (
-                <div>
-                  <div
-                    className="absolute right-2 top-1 cursor-pointer font-extrabold"
-                    onClick={handleClose}
-                  >
-                    X
-                  </div>
-                  <div className="flex flex-col justify-center items-center gap-6">
-                    <div className="flex sm:gap-2 items-center justify-center pt-2 sm:pt-0 gap-4">
-                      <BellIcon />
-                      <h3 className="text-lg font-bold text-white">
-                        S&apos;incrire pour recevoir notre information
-                      </h3>
-                    </div>
-                    <div>
-                      <form
-                        className="flex gap-2"
-                        onSubmit={(e) => {
-                          e.preventDefault();
-                          const formData = new FormData(e.target);
-                          subscribe({ EMAIL: formData.get("email") });
-                        }}
-                      >
-                        <input
-                          type="email"
-                          name="email"
-                          placeholder="Entrer votre Email"
-                          className="p-3 rounded-lg text-gray-800 border-2 bg-white focus:outline-none focus:ring-2 focus:ring-greeny-600 focus:border-transparent transition duration-300 ease-in-out w-fit"
-                          required
-                        />
-                        <button
-                          type="submit"
-                          className="bg-transparent border-2 text-white w-max p-2 font-bold transition duration-300 hover:scale-105"
-                        >
-                          S`abonner
-                        </button>
-                      </form>
-                      <p className="text-xs pt-1 w-full">
-                        <span>
-                          J&apos;accepte que mon adresse mail soit recueillie et
-                        </span>
-                        utilisée dans le cadre d&apos;envoi d&apos;informations,
-                        <span>et que mon consentement soit enregistré.</span>
-                      </p>
+            <form
+              action="https://piplettes-granville.us11.list-manage.com/subscribe/post?u=4259d8a7dae521c25a028aa24&amp;id=d895eecf26&amp;f_id=003ff2e1f0"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              className="flex flex-col gap-4"
+              target="_blank"
+              noValidate
+            >
+              <div className="flex justify-between items-center">
+                <h2 className="text-lg font-semibold text-gray-900">
+                  S'inscrire pour recevoir notre information
+                </h2>
+                <button
+                  type="button"
+                  onClick={handleClose}
+                  aria-label="Close newsletter signup form"
+                  className="text-gray-600 hover:text-gray-900 text-xl font-bold leading-none"
+                >
+                  &times;
+                </button>
+              </div>
 
-                      {status === "sending" && <div>Envoi en cours...</div>}
-                      {status === "error" && (
-                        <div style={{ color: "red" }}>
-                          {message ||
-                            "Une erreur est survenue. Veuillez réessayer plus tard."}
-                        </div>
-                      )}
-                      {status === "success" && (
-                        <div className="text-black font-bold mt-1 mr-2">
-                          Merci pour votre inscription!
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              )}
-            />
+              <label htmlFor="mce-EMAIL" className="font-medium">
+                Email Address <span className="text-red-600">*</span>
+              </label>
+              <input
+                type="email"
+                name="EMAIL"
+                id="mce-EMAIL"
+                required
+                className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-greeny-600 focus:border-greeny-600 transition"
+                placeholder="Entrer votre Email"
+              />
+
+              {/* Hidden anti-bot field */}
+              <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true">
+                <input
+                  type="text"
+                  name="b_4259d8a7dae521c25a028aa24_d895eecf26"
+                  tabIndex={-1}
+                  value=""
+                  readOnly
+                />
+              </div>
+
+              <button
+                type="submit"
+                name="subscribe"
+                id="mc-embedded-subscribe"
+                className="bg-magenta-600 hover:bg-magenta-700 text-white font-semibold py-3 rounded-lg transition-colors duration-300"
+              >
+                S'abonner
+              </button>
+
+              <p className="text-xs text-gray-600">
+                J&apos;accepte que mon adresse mail soit recueillie et utilisée dans le cadre d&apos;envoi d&apos;informations, et que mon consentement soit enregistré.
+              </p>
+            </form>
           ) : (
             <div
-              className="flex items-center justify-center p-4 cursor-pointer"
+              className="flex items-center justify-center cursor-pointer p-4 text-magenta-600 hover:text-magenta-800"
               onClick={handleOpen}
+              role="button"
+              tabIndex={0}
+              aria-label="Open newsletter signup form"
+              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") handleOpen(); }}
             >
               <BellIcon />
             </div>
@@ -127,8 +128,12 @@ const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
         </div>
       ) : (
         <div
-          className="fixed bottom-4 right-4 w-auto bg-magenta-600 text-white p-4 shadow-xl  rounded-lg flex items-center justify-center cursor-pointer transition-transform duration-500 ease-in-out transform animate-slide-in-right"
+          className="fixed bottom-4 right-4 w-auto bg-magenta-600 text-white p-4 shadow-xl rounded-lg flex items-center justify-center cursor-pointer transition-transform duration-500 ease-in-out transform animate-slide-in-right"
           onClick={handleOpen}
+          role="button"
+          tabIndex={0}
+          aria-label="Open newsletter signup form"
+          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") handleOpen(); }}
         >
           <BellIcon />
           <span className="animate-ping absolute top-1 right-0.5 block h-1 w-1 rounded-full ring-2 ring-greeny-600 bg-greeny-600"></span>
@@ -138,4 +143,4 @@ const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
   );
 };
 
-export default NewsletterCTA;
+export default MailchimpFormWithToggle;

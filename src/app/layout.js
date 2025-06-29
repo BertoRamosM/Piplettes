@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
             <main className="text-black pt-20 pb-12 flex flex-col w-full mx-auto lg:w-[920px] rounded-xl px-4 h-auto overflow-x-hidden">
               {children}
             </main>
-           {/*  <NewsletterCTA /> */}
+             <NewsletterCTA /> 
             <Footer />
           </AuthProvider>
         </body>
