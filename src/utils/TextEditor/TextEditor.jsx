@@ -1,19 +1,24 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css";
 
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+const ReactQuill = dynamic(
+  () => import("react-quill"),
+  { ssr: false }
+);
 
-const RichTextEditor = ({ value, onSave }) => {
-  const [editorValue, setEditorValue] = useState(value || "");
+const RichTextEditor = ({ value = "", onSave }) => {
+  const [editorValue, setEditorValue] = useState("");
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true); // Ensures this runs only on the client
+    setIsClient(true);
   }, []);
 
   useEffect(() => {
-    setEditorValue(value);
+    setEditorValue(value || "");
   }, [value]);
 
   const modules = {
@@ -43,16 +48,22 @@ const RichTextEditor = ({ value, onSave }) => {
 
   const handleChange = (content) => {
     setEditorValue(content);
-    onSave(content);
+
+    if (typeof onSave === "function") {
+      onSave(content);
+    }
   };
 
   if (!isClient) {
-    // Show a loading indicator or placeholder during SSR
-    return <div>Loading editor...</div>;
+    return (
+      <div className="border-2 border-zinc-500 p-4 rounded">
+        Loading editor...
+      </div>
+    );
   }
 
   return (
-    <div>
+    <div className="w-full">
       <ReactQuill
         theme="snow"
         value={editorValue}
@@ -63,6 +74,5 @@ const RichTextEditor = ({ value, onSave }) => {
     </div>
   );
 };
-
 
 export default RichTextEditor;
