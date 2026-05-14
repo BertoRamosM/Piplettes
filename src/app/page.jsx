@@ -7,7 +7,7 @@ import Carousel from "../components/Carousel";
 
 export const metadata = {
   title: "Les Piplettes | Association Culturelle à Granville",
-  description: "Découvrez Les Piplettes de Granville, une association culturelle dynamique proposant des événements, ateliers et rencontres pour promouvoir la culture et le partage. Rejoignez-nous pour explorer nos activités enrichissantes.",
+  description: "Découvrez Les Piplettes de Granville, une association culturelle dynamique proposant des événements, ateliers et rencontres pour promouvoir la culture et le partage. Rejoignez-nous pour explorer nos activités enrichissantes.   ",
 /*   icons: {
     icon: "/texte.png",
   }, */
