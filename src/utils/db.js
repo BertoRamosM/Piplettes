@@ -1,43 +1,22 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGO;
-
-if (!MONGODB_URI) {
-  throw new Error('Please define the MONGODB_URI environment variable');
-}
-
-let cached = global.mongoose;
-
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
-}
-
-async function connect() {
-  if (cached.conn) {
-    console.log('Using cached MongoDB connection');
-    return cached.conn;
-  }
-
-  if (!cached.promise) {
-    const opts = {
-      bufferCommands: false,
-    };
-
-    console.log('Creating new MongoDB connection');
-    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
-      return mongoose;
-    });
+const connect = async () => {
+  if (mongoose.connection.readyState !== 0) {
+    console.log("Already connected to MongoDB");
+    return;
   }
 
   try {
-    cached.conn = await cached.promise;
-    console.log('✅ Connected to MongoDB');
+    console.log("Connecting to MongoDB...");
+    await mongoose.connect(process.env.MONGO, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("Successfully connected to MongoDB");
   } catch (error) {
-    console.error('❌ Error connecting to MongoDB:', error);
-    throw error;
+    console.error("MongoDB connection failed:", error.message);
+    throw new Error("MongoDB connection failed");
   }
-
-  return cached.conn;
-}
+};
 
 export default connect;

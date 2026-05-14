@@ -4,30 +4,27 @@ import Events from "../../../models/Events";
 
 export async function GET() {
   try {
-    console.log('Attempting to connect to MongoDB...');
     await connect();
-    console.log('✅ Connected to MongoDB in API route');
+    console.log("Connected to MongoDB in API route");
 
-    console.log('Fetching events from database...');
     const events = await Events.find().sort({ date: 1 });
-    console.log('Fetched events:', events);
+    console.log("Fetched events from database:", events);
 
     if (events.length === 0) {
-      console.warn('⚠️ No events found in MongoDB collection.');
+      console.warn("No events found in MongoDB collection.");
     }
 
     return NextResponse.json(events);
   } catch (error) {
-    console.error('❌ Error fetching events:', error);
+    console.error("Error fetching events:", error);
     return new NextResponse("Database error!", { status: 500 });
   }
 }
 
+
 export const POST = async (request) => {
   try {
-    console.log('Attempting to connect to MongoDB...');
     await connect();
-    console.log('✅ Connected to MongoDB in API route');
 
     const body = await request.json();
     console.log("Request body:", body);
@@ -44,7 +41,6 @@ export const POST = async (request) => {
       month: body.month || "",
       themes: body.themes || [],
       release: body.release,
-      plus: body.plus || "",
     });
 
     await newEvent.save();

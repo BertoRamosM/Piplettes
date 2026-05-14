@@ -47,10 +47,6 @@ const eventSchema = new Schema({
     type: String,
     required: true,
   },
-  plus:{
-    type: String,
-    required: false,
-  }
 });
 
 const Events = mongoose.models.Events || mongoose.model("Events", eventSchema);
