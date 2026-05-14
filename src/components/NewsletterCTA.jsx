@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import BellIcon from "./icons/BellIcon";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
@@ -32,8 +33,10 @@ const NewsletterCTA = () => {
     }, 100);
   };
 
-const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
+  const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
 
+  const isValidMailchimpUrl =
+    typeof MAILCHIMP_URL === "string" && MAILCHIMP_URL.includes("list-manage.com");
 
   return (
     <div>
@@ -51,24 +54,26 @@ const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
           }}
         >
           {isVisible ? (
-            <MailchimpSubscribe
-              url={MAILCHIMP_URL}
-              render={({ subscribe, status, message }) => (
-                <div>
-                  <div
-                    className="absolute right-2 top-1 cursor-pointer font-extrabold"
-                    onClick={handleClose}
-                  >
-                    X
-                  </div>
-                  <div className="flex flex-col justify-center items-center gap-6">
-                    <div className="flex sm:gap-2 items-center justify-center pt-2 sm:pt-0 gap-4">
-                      <BellIcon />
-                      <h3 className="text-lg font-bold text-white">
-                        S&apos;incrire pour recevoir notre information
-                      </h3>
+            isValidMailchimpUrl ? (
+              <MailchimpSubscribe
+                url={MAILCHIMP_URL}
+                render={({ subscribe, status, message }) => (
+                  <div>
+                    <div
+                      className="absolute right-2 top-1 cursor-pointer font-extrabold"
+                      onClick={handleClose}
+                    >
+                      X
                     </div>
-                    <div>
+
+                    <div className="flex flex-col justify-center items-center gap-6">
+                      <div className="flex sm:gap-2 items-center justify-center pt-2 sm:pt-0 gap-4">
+                        <BellIcon />
+                        <h3 className="text-lg font-bold text-white">
+                          S&apos;inscrire pour recevoir nos informations
+                        </h3>
+                      </div>
+
                       <form
                         className="flex gap-2"
                         onSubmit={(e) => {
@@ -81,41 +86,38 @@ const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
                           type="email"
                           name="email"
                           placeholder="Entrer votre Email"
-                          className="p-3 rounded-lg text-gray-800 border-2 bg-white focus:outline-none focus:ring-2 focus:ring-greeny-600 focus:border-transparent transition duration-300 ease-in-out w-fit"
+                          className="p-3 rounded-lg text-gray-800 border-2 bg-white w-fit"
                           required
                         />
+
                         <button
                           type="submit"
-                          className="bg-transparent border-2 text-white w-max p-2 font-bold transition duration-300 hover:scale-105"
+                          className="bg-transparent border-2 text-white w-max p-2 font-bold"
                         >
-                          S`abonner
+                          S&apos;abonner
                         </button>
                       </form>
-                      <p className="text-xs pt-1 w-full">
-                        <span>
-                          J&apos;accepte que mon adresse mail soit recueillie et
-                        </span>
-                        utilisée dans le cadre d&apos;envoi d&apos;informations,
-                        <span>et que mon consentement soit enregistré.</span>
-                      </p>
 
                       {status === "sending" && <div>Envoi en cours...</div>}
                       {status === "error" && (
                         <div style={{ color: "red" }}>
-                          {message ||
-                            "Une erreur est survenue. Veuillez réessayer plus tard."}
+                          {message || "Erreur, veuillez réessayer."}
                         </div>
                       )}
                       {status === "success" && (
-                        <div className="text-black font-bold mt-1 mr-2">
-                          Merci pour votre inscription!
+                        <div className="text-black font-bold mt-1">
+                          Merci pour votre inscription !
                         </div>
                       )}
                     </div>
                   </div>
-                </div>
-              )}
-            />
+                )}
+              />
+            ) : (
+              <div className="text-white text-center p-4">
+                Newsletter indisponible (configuration manquante)
+              </div>
+            )
           ) : (
             <div
               className="flex items-center justify-center p-4 cursor-pointer"
@@ -127,11 +129,10 @@ const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
         </div>
       ) : (
         <div
-          className="fixed bottom-4 right-4 w-auto bg-magenta-600 text-white p-4 shadow-xl  rounded-lg flex items-center justify-center cursor-pointer transition-transform duration-500 ease-in-out transform animate-slide-in-right"
+          className="fixed bottom-4 right-4 w-auto bg-magenta-600 text-white p-4 shadow-xl rounded-lg flex items-center justify-center cursor-pointer"
           onClick={handleOpen}
         >
           <BellIcon />
-          <span className="animate-ping absolute top-1 right-0.5 block h-1 w-1 rounded-full ring-2 ring-greeny-600 bg-greeny-600"></span>
         </div>
       )}
     </div>
